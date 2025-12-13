@@ -128,7 +128,7 @@ export const Navbar = () => {
                   </NavLink>
                 </li>
 
-                        <NavLink to="/admin" onClick={() => setIsMenuOpen(false)}>
+                        <NavLink to="/login" onClick={() => setIsMenuOpen(false)}>
                 {({ isActive }) => (
                   <Button
                     className={`

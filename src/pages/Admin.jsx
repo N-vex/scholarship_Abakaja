@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { Link } from "@/components/ui/router";
+import { useNavigate } from "react-router-dom";
 import { supabase } from "@/components/ui/client";
 import { FormCard } from "@/components/ui/FormCard";
+import ProtectedRoute from "@/components/ui/ProtectedRoute";
 import { NotificationBell } from "@/components/ui/NotificationBell";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -43,6 +45,18 @@ const Admin = () => {
         setIsLoading(false);
     }
     };
+
+const navigate = useNavigate();
+
+const handleLogout = async () => {
+  const { error } = await supabase.auth.signOut();
+
+  if (error) {
+    toast.error("Failed to log out");
+  } else {
+    navigate("/login", { replace: true });
+  }
+};
 
   useEffect(() => {
     fetchForms();
@@ -207,6 +221,15 @@ const Admin = () => {
             ))}
           </div>
         )}
+        <div>
+            <Button
+              variant="outline"
+              className="mt-8"
+              onClick={handleLogout}
+            >
+              Logout
+            </Button>
+        </div>
       </main>
     </div>
   );

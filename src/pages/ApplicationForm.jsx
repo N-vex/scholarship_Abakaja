@@ -23,18 +23,18 @@ const ApplicationForm = () => {
         </div>
 
         {/* Trust Indicators */}
-        <div className="mt-12 flex flex-wrap justify-center gap-8 text-sm text-muted-foreground animate-fade-in opacity-0 stagger-5">
+        <div className="mt-12 flex flex-wrap justify-center text-white gap-8 text-sm text-muted-foreground animate-fade-in opacity-0 stagger-5">
           <div className="flex items-center gap-2">
             <div className="w-2 h-2 rounded-full bg-success" />
-            Secure submission
+            <strong>Secure submission</strong>
           </div>
           <div className="flex items-center gap-2">
             <div className="w-2 h-2 rounded-full bg-success" />
-            Verified processing
+            <strong>Verified processing</strong>
           </div>
           <div className="flex items-center gap-2">
             <div className="w-2 h-2 rounded-full bg-success" />
-            Fast review time
+              <strong> Fast review time</strong>
           </div>
         </div>
 

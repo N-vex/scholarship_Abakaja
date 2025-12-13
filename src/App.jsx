@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { Navbar } from "./components/Navbar";
 import { Footer } from "./components/Footer";
 import { Home } from "./pages/Home";
@@ -10,7 +10,9 @@ import { Card } from "@/components/UI/Card";
 import ApplicationForm from "./pages/ApplicationForm"; 
 import { ApplicationFormSubmit } from "@/components/ui/ApplicationFormSubmit";
 import Admin from "./pages/Admin"; 
-
+import {LoginPage} from "./pages/LoginPage";
+import ProtectedRoute from "./components/ui/ProtectedRoute";
+import { SignupPage } from "./pages/SignUpPage";
 
 export const App = () => {
     return (
@@ -24,8 +26,17 @@ export const App = () => {
                         <Route path="/about" element={<About />} />
                         <Route path="/contact" element={<Contact />} />
                         <Route path="/application-form" element={<ApplicationForm />} />
-                        <Route path="/admin" element={<Admin />} />
+                        <Route path="/login" element={<LoginPage />} />
+                        <Route
+                        path="/admin"
+                        element={
+                            <ProtectedRoute>
+                            <Admin />
+                            </ProtectedRoute>
+                        }
+                        />
                         <Route path="/form-submission" element={<ApplicationFormSubmit />} />
+                        <Route path="/signup" element={<SignupPage />} />
                     </Routes>
                 </main>
                 <Footer />
