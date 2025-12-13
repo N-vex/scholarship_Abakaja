@@ -1,5 +1,7 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { Button } from "@/components/ui/button";
+import { Shield } from "lucide-react";
+import { NavLink, Link } from "react-router-dom";
 
 export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -11,7 +13,7 @@ export const Navbar = () => {
   return (
     <>
       <header className="bg-blue-400">
-        <nav className="bg-white dark:bg-black fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-blue  -600">
+        <nav className="bg-white dark:bg-black fixed w-full z-20 top-0 start-0 border-b dark:border-blue  -600">
           <div className="max-w-7xl flex flex-wrap items-center justify-between mx-auto p-5">
             <a
               href="/"
@@ -125,6 +127,27 @@ export const Navbar = () => {
                     Contact
                   </NavLink>
                 </li>
+
+                        <NavLink to="/admin" onClick={() => setIsMenuOpen(false)}>
+                {({ isActive }) => (
+                  <Button
+                    className={`
+                      flex items-center gap-2 px-4 py-2 
+                      rounded-md transition-colors
+                      ${
+                        isActive
+                          ? "bg-blue-700 text-white hover:bg-blue-800"
+                          : "bg-transparent text-blue-700 border border-blue-700 hover:bg-blue-700 hover:text-white"
+                      }
+                    `}
+                  >
+                    <Shield className="w-4 h-4" />
+                    Admin Panel
+                  </Button>
+                )}
+              </NavLink>
+
+
 
                 {/* Donate Button moved inside */}
                 <li className="mt-2 md:mt-0">

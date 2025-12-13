@@ -1,11 +1,70 @@
-import React from "react";
+import React, { useState, useMemo } from "react";
 import { Award, GraduationCap, BookOpen, Star, Handshake, Pencil, Users } from "lucide-react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 const links = [
   { name: "Check Requirements", href: "#requirements" },
 ];
 
-export const Scholarship = () => {
+const sampleScholarships = [
+  {
+    id: 1,
+    title: "Best Graduating Student Award",
+    level: "Secondary / University",
+    award: "Award and Recognition",
+    deadline: "2026-12-30",
+    duration: "Final Year",
+    summary:
+      "This scholarship celebrates students with outstanding academic performance in their graduating year. The award is given based on results, character, and overall performance.",
+    applyUrl: "#",
+  },
+  {
+    id: 2,
+    title: "Undergraduate Entry Support Scholarship",
+    level: "University Admission",
+    award: "Tuition Support",
+    deadline: "2026-09-10",
+    duration: "First Year",
+    summary:
+      "For students who have completed secondary school and plan to study in a university. Priority is given to students from low-income households and excellent academic records.",
+    applyUrl: "#",
+  },
+  {
+    id: 3,
+    title: "Secondary School Progression Scholarship",
+    level: "JSS → SSS or Primary → Secondary",
+    award: "School Support",
+    deadline: "2026-08-05",
+    duration: "One term / One session",
+    summary:
+      "For students proceeding into secondary school who show strong academic interest and financial need. Includes partial or full support.",
+    applyUrl: "#",
+  },
+];
+
+
+export const Scholarship = ({ scholarships = sampleScholarships }) => {
+
+        const [query, setQuery] = useState("");
+      const [levelFilter, setLevelFilter] = useState("All");
+
+
+      const levels = useMemo(() => {
+      const set = new Set(scholarships.map((s) => s.level));
+      return ["All", ...Array.from(set)];
+      }, [scholarships]);
+
+
+      const filtered = useMemo(() => {
+      return scholarships.filter((s) => {
+      const matchesLevel = levelFilter === "All" || s.level === levelFilter;
+      const matchesQuery =
+      s.title.toLowerCase().includes(query.toLowerCase()) ||
+      s.summary.toLowerCase().includes(query.toLowerCase());
+      return matchesLevel && matchesQuery;
+      });
+      }, [scholarships, query, levelFilter]);
+
   return (
     <>
           <section className="flex flex-col md:flex-row items-center justify-between text-white  py-20 px-4 sm:py-20 sm:px-6 lg:px-8">
@@ -13,25 +72,87 @@ export const Scholarship = () => {
       <div className="md:w-1/2 mb-10 text-center md:mb-0">
         <h1 className="text-4xl md:text-5xl  font-bold leading-tight mb-6">
           Welcome to Our Scholarship Program
-          <div className="absolute inset-0 overflow-hidden pointer-events-none">
 
-  <Award className="w-64 h-64 text-white/5 absolute top-10 right-10 rotate-12" />
-
-  <GraduationCap className="w-72 h-72 text-white/5 absolute bottom-10 left-5 -rotate-6" />
-
-  <BookOpen className="w-96 h-96 text-white/5 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
-</div>
 
         </h1>
         <p className="text-xl md:text-2xl font-medium mb-8">
           Empowering Dreams, Transforming Futures
                 <div className="absolute inset-0">
-        <div className="absolute w-96 h-96 bg-blue-500/20 blur-3xl rounded-full top-0 left-0" />
-        <div className="absolute w-80 h-80 bg-green-400/20 blur-3xl rounded-full bottom-0 right-0" />
+        <div
+    className="
+      absolute rounded-full blur-3xl 
+      bg-blue-500/20 
+      top-0 left-0 
+      w-60 h-60         
+      sm:w-80 sm:h-80   
+      md:w-96 md:h-96   
+    "
+  />
 
-        <Star className="w-56 h-56 text-white/10 absolute top-16 left-12 rotate-12" />
-        <Handshake className="w-64 h-64 text-white/10 absolute bottom-24 right-10 -rotate-6" />
-      </div>
+  {/* GREEN BLOB */}
+  <div
+    className="
+      absolute rounded-full blur-3xl 
+      bg-green-400/20 
+      bottom-0 right-0
+      w-52 h-52 
+      sm:w-72 sm:h-72
+      md:w-80 md:h-80
+    "
+  />
+
+  {/* STAR ICON */}
+  <Star
+    className="
+      absolute text-white/10 rotate-12
+      top-10 left-8
+      w-24 h-24         
+      sm:w-40 sm:h-40   
+      md:w-56 md:h-56   
+    "
+  />
+
+  {/* HANDSHAKE ICON */}
+  <Handshake
+    className="
+      absolute text-white/10 -rotate-6
+      bottom-20 right-6
+      w-28 h-28
+      sm:w-48 sm:h-48
+      md:w-64 md:h-64
+    "
+  />
+
+  {/* AWARD ICON (Top Right) */}
+  <Award
+    className="
+      absolute text-white/5 rotate-12
+      top-6 right-6
+      hidden sm:block          /* hide on mobile */
+      w-40 h-40 sm:w-52 sm:h-52 md:w-64 md:h-64
+    "
+  />
+
+  {/* GRADUATION CAP (Bottom Left) */}
+  <GraduationCap
+    className="
+      absolute text-white/5 -rotate-6
+      bottom-6 left-6
+      hidden sm:block
+      w-44 h-44 sm:w-60 sm:h-60 md:w-72 md:h-72
+    "
+  />
+
+  {/* BOOK ICON (Center) */}
+  <BookOpen
+    className="
+      absolute text-white/5 
+      top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
+      hidden md:block         /* only show on desktop */
+      w-80 h-80
+    "
+  />
+</div>
 
         </p>
         <div className="flex justify-center ">
@@ -45,15 +166,81 @@ export const Scholarship = () => {
       {/* Right Image Section */}
       <div className="md:w-1/2 flex justify-center">
         <img
-          src="./src/assets/img1.jpg" // Replace with your actual image path
+          src="./src/assets/img1.jpg" 
           alt="Person using laptop"
           className="max-w-full h-auto rounded-lg shadow-lg"
         />
       </div>
     </section>
-      {/* Scholarships we offer and criterias */}
-      <section className="py-16 px-4 sm:py-20 ">
+
+      <section id="scholarships" className="py-12 px-6 sm:px-8 lg:px-16 bg-black">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6 mb-8">
+            <div>
+      <h2 className="text-3xl font-extrabold text-gray-900 dark:text-white">
+                Scholarships we offer
+              </h2>
+              <p className="mt-2 text-gray-600 dark:text-gray-300 max-w-2xl">
+                Financial support and fellowships designed to help students focus on study and impact.
+              </p>
+            </div>
+            <div className="flex gap-3 items-center">
+              <div className="relative">
+                <label htmlFor="search" className="sr-only">
+                  Search scholarships
+                </label>
+                <input
+                  id="search"
+                  value={query}
+                  onChange={(e) => setQuery(e.target.value)}
+                  placeholder="Search by title or keyword"
+                  className="w-64 sm:w-80 px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm bg-gray-50 dark:bg-gray-800 border-gray-200 dark:border-gray-700 text-gray-900 dark:text-gray-100"
+                />
+                </div>
+                    <div className="hidden sm:flex gap-2 items-center">
+                {levels.map((lvl) => (
+                  <button
+                    key={lvl}
+                    onClick={() => setLevelFilter(lvl)}
+                    className={`text-sm px-3 py-2 rounded-md transition-shadow focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-blue-700 ${
+                      levelFilter === lvl
+                        ? "bg-indigo-600 text-white shadow-md"
+                        : "bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-200"
+                    }`}
+                  >
+                    {lvl}
+                  </button>
+                ))}
+              </div>
+            </div>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {filtered.map((s) => (
+        <article
+          key={s.id}
+          className="group relative rounded-2xl border border-gray-100 dark:border-gray-800 p-6 bg-linear-to-br from-green-500 via-green-400 to-blue-600 shadow-sm hover:shadow-lg transition-shadow"
+        >
+          <header className="flex items-start justify-between gap-4">
+            <div>
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-white">{s.title}</h3>
+              <p className="mt-1 text-sm text-white">
+                {s.level} • {s.duration}
+              </p>
+            </div>
+            <div className="text-sm text-right">
+                    <span className="inline-block px-2 py-1 rounded-full text-xs font-medium bg-black text-white">
+                      {s.award}
+                    </span>
+                  </div>
+                </header>
+              </article>
+            ))}
+          </div>
+
+              <section className="py-16 px-4 sm:py-20 ">
         <div className="max-w-4xl mx-auto text-white">
+          
+          
           <h2 className="text-3xl font-bold text-center mb-10 text-gray-900 dark:text-white">
             Scholarships We Offer & Criteria
           </h2>
@@ -129,6 +316,24 @@ export const Scholarship = () => {
           </p>
         </div>
       </section>
+        <div className="mt-10 text-center">
+        <p className="text-gray-600 dark:text-gray-300 mb-4">
+          Have you reviewed the requirements and you’re ready to apply?
+        </p>
+
+        <a
+          href="/application-form"
+          className="inline-bock rounded-full px-6 py-3 bg-blue-700 text-white hover:bg-green-700 transition"
+        >
+          Proceed to Application Form
+        </a>
+      </div>
+
+        </div>
+      </section>
+
+      {/* Scholarships we offer and criterias */}
+      
     </>
   );
 };

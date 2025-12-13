@@ -203,6 +203,21 @@ const testimonials = [
     },
   ];
 
+  // const [isVisible, setIsVisible] = useState(false);
+  // const ref = useRef(null);
+
+  // useEffect(() => {
+  //   const observer = new IntersectionObserver(
+  //     ([entry]) => {
+  //       if (entry.isIntersecting) setIsVisible(true);
+  //     },
+  //     { threshold: 0.1 }
+  //   );
+
+  //   if (ref.current) observer.observe(ref.current);
+  //   return () => observer.disconnect();
+  // }, []);
+
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef(null);
 
@@ -211,14 +226,12 @@ const testimonials = [
       ([entry]) => {
         if (entry.isIntersecting) setIsVisible(true);
       },
-      { threshold: 0.1 }
+      { threshold: 0.2 }
     );
 
     if (ref.current) observer.observe(ref.current);
     return () => observer.disconnect();
   }, []);
-
-
   return (
 
     <>
@@ -253,7 +266,7 @@ const testimonials = [
       <section id="values" className="py-20 ">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-12 dark:text-white">
-            Our Mission, Values & Vision
+            Our Mission, Goal & Vision
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -263,18 +276,26 @@ const testimonials = [
                 Mission
               </div>
               <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                Our mission is to eradicate ignorance and poverty through career
-                revolution and education.
+              The Mission is to
+              eradicate ignorance
+              and poverty through 
+              career revolution and 
+              to create community 
+              partnerships to fulfill 
+              educational dreams in 
+              Urualla and beyond.
               </p>
             </div>
 
             {/* Values */}
             <div className="p-6 bg-white dark:bg-black rounded-2xl shadow-md">
               <div className="w-28 h-28 mx-auto flex items-center justify-center rounded-full bg-green-600 text-white text-xl font-semibold mb-4">
-                Values
+                Goal
               </div>
               <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                Empowerment, integrity, innovation, excellence, and community.
+              To create and promote a world-class educational
+              scholarship programme for our people and foster mutually 
+              beneficial partnerships.
               </p>
             </div>
 
@@ -284,8 +305,14 @@ const testimonials = [
                 Vision
               </div>
               <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                To transform communities into world-class societies that value
-                career and education.
+             To bridge the gaps
+              between opportunities 
+              toexcel, and to
+              transform the
+              community into a
+              world-class society,
+              where career\vocation 
+              is supreme
               </p>
             </div>
           </div>
@@ -321,7 +348,7 @@ const testimonials = [
               className={`group p-8 rounded-2xl bg-primary-foreground/5 backdrop-blur-sm border border-primary-foreground/10 hover:bg-primary-foreground/10 transition-all duration-500 hover:-translate-y-2 ${
                 isVisible
                   ? "opacity-100 translate-y-0"
-                  : "opacity-0 translate-y-8"
+                  : "opacity-0 translate-y-6"
               }`}
               style={{ transitionDelay: `${index * 100}ms` }}
             >

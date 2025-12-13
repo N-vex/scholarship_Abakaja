@@ -53,10 +53,10 @@ export const Footer = () => {
           <div>
             <h3 className="font-display text-lg font-bold mb-4">Quick Links</h3>
             <ul className="space-y-3">
-              <li><a href="#" className="text-primary-foreground/80 hover:text-accent transition-colors">About Us</a></li>
-              <li><a href="#" className="text-primary-foreground/80 hover:text-accent transition-colors">Scholarship</a></li>
+              <li><a href="/about" className="text-primary-foreground/80 hover:text-accent transition-colors">About Us</a></li>
+              <li><a href="/scholarships" className="text-primary-foreground/80 hover:text-accent transition-colors">Scholarship</a></li>
               <li><a href="#" className="text-primary-foreground/80 hover:text-accent transition-colors">How It Works</a></li>
-              <li><a href="#" className="text-primary-foreground/80 hover:text-accent transition-colors">Success Stories</a></li>
+              <li><a href="/about" className="text-primary-foreground/80 hover:text-accent transition-colors">Success Stories</a></li>
               <li><a href="#" className="text-primary-foreground/80 hover:text-accent transition-colors">FAQs</a></li>
             </ul>
           </div>
@@ -65,11 +65,11 @@ export const Footer = () => {
           <div>
             <h3 className="font-display text-lg font-bold mb-4">Scholarships</h3>
             <ul className="space-y-3">
-              <li><a href="#" className="text-primary-foreground/80 hover:text-accent transition-colors">Undergraduate</a></li>
-              <li><a href="#" className="text-primary-foreground/80 hover:text-accent transition-colors">Graduate</a></li>
+              <li><a href="/scholarships" className="text-primary-foreground/80 hover:text-accent transition-colors">Undergraduate</a></li>
+              <li><a href="/scholarships" className="text-primary-foreground/80 hover:text-accent transition-colors">Graduate</a></li>
               <li><a href="#" className="text-primary-foreground/80 hover:text-accent transition-colors">STEM Programs</a></li>
               <li><a href="#" className="text-primary-foreground/80 hover:text-accent transition-colors">Arts & Humanities</a></li>
-              <li><a href="#" className="text-primary-foreground/80 hover:text-accent transition-colors">Apply Now</a></li>
+              <li><a href="/application-form" className="text-primary-foreground/80 hover:text-accent transition-colors">Apply Now</a></li>
             </ul>
           </div>
 

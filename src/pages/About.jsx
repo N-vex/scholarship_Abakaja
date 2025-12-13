@@ -62,11 +62,11 @@ export const About = () => {
           </div>
 
           {/* Multiple Images on Same Line */}
-          <div className="grid md:grid-cols-3 gap-6">
+          {/* <div className="grid md:grid-cols-3 gap-6">
             <img
               src="./src/assets/about01.jpeg"
               alt="our story 1"
-              className="rounded-xl shadow-md w-full h-64 object-contain"
+              className="rounded-xl shadow-md w-full h-full object-cover"
             />
             <img
               src="./src/assets/about5.jpg"
@@ -76,9 +76,9 @@ export const About = () => {
             <img
               src="./src/assets/about2.jpeg"
               alt="our story 3"
-              className="rounded-xl shadow-md w-full h-64 object-contain"
+              className="rounded-xl shadow-md w-full h-full object-cover"
             />
-          </div>
+          </div> */}
         </section>
 
         
@@ -86,7 +86,7 @@ export const About = () => {
         <section className="py-16">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl font-bold text-white mb-12 text-center">
-              Our Team
+              Our Board Members
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
               {/* Leader */}
@@ -184,6 +184,110 @@ export const About = () => {
                 </a>
                 <h3 className="text-xl font-semibold mb-2">Ernest Asogwa</h3>
                 <p className="text-gray-600">CFO Outreach</p>
+                <div className="flex mt-4 sm:justify-center  space-x-6  sm:mt-0">
+                  <a href="#" className="text-blue-600 hover:text-blue-800">
+                    <FaFacebook />
+                  </a>
+                  <a href="#" className="text-blue-400 hover:text-blue-600">
+                    <FaTwitter />
+                  </a>
+                  <a href="#" className="text-pink-500 hover:text-pink-700">
+                    <FaInstagram />
+                  </a>
+                  <a href="#" className="text-blue-700 hover:text-blue-900">
+                    <FaLinkedin />
+                  </a>
+                </div>
+              </div>
+                            <div className="bg-white rounded-lg shadow-lg p-6 text-center ">
+                <a href="/Profile">
+                  {" "}
+                  <img
+                    src="/assets/profile7.jpg"
+                    alt="Leader"
+                    className="w-32 h-32 mx-auto rounded-full mb-4 object-cover hover:scale-105 transition-transform duration-300"
+                  />
+                </a>
+                <h3 className="text-xl font-semibold mb-2">Ifeanyi Eze</h3>
+                <p className="text-gray-600">President</p>
+                <div className="flex mt-4 sm:justify-center  space-x-6  sm:mt-0">
+                  <a href="#" className="text-blue-600 hover:text-blue-800">
+                    <FaFacebook />
+                  </a>
+                  <a href="#" className="text-blue-400 hover:text-blue-600">
+                    <FaTwitter />
+                  </a>
+                  <a href="#" className="text-pink-500 hover:text-pink-700">
+                    <FaInstagram />
+                  </a>
+                  <a href="#" className="text-blue-700 hover:text-blue-900">
+                    <FaLinkedin />
+                  </a>
+                </div>
+              </div>
+                            <div className="bg-white rounded-lg shadow-lg p-6 text-center ">
+                <a href="/Profile">
+                  {" "}
+                  <img
+                    src="/assets/profile7.jpg"
+                    alt="Leader"
+                    className="w-32 h-32 mx-auto rounded-full mb-4 object-cover hover:scale-105 transition-transform duration-300"
+                  />
+                </a>
+                <h3 className="text-xl font-semibold mb-2">Ifeanyi Eze</h3>
+                <p className="text-gray-600">President</p>
+                <div className="flex mt-4 sm:justify-center  space-x-6  sm:mt-0">
+                  <a href="#" className="text-blue-600 hover:text-blue-800">
+                    <FaFacebook />
+                  </a>
+                  <a href="#" className="text-blue-400 hover:text-blue-600">
+                    <FaTwitter />
+                  </a>
+                  <a href="#" className="text-pink-500 hover:text-pink-700">
+                    <FaInstagram />
+                  </a>
+                  <a href="#" className="text-blue-700 hover:text-blue-900">
+                    <FaLinkedin />
+                  </a>
+                </div>
+              </div>
+                            <div className="bg-white rounded-lg shadow-lg p-6 text-center ">
+                <a href="/Profile">
+                  {" "}
+                  <img
+                    src="/assets/profile7.jpg"
+                    alt="Leader"
+                    className="w-32 h-32 mx-auto rounded-full mb-4 object-cover hover:scale-105 transition-transform duration-300"
+                  />
+                </a>
+                <h3 className="text-xl font-semibold mb-2">Ifeanyi Eze</h3>
+                <p className="text-gray-600">President</p>
+                <div className="flex mt-4 sm:justify-center  space-x-6  sm:mt-0">
+                  <a href="#" className="text-blue-600 hover:text-blue-800">
+                    <FaFacebook />
+                  </a>
+                  <a href="#" className="text-blue-400 hover:text-blue-600">
+                    <FaTwitter />
+                  </a>
+                  <a href="#" className="text-pink-500 hover:text-pink-700">
+                    <FaInstagram />
+                  </a>
+                  <a href="#" className="text-blue-700 hover:text-blue-900">
+                    <FaLinkedin />
+                  </a>
+                </div>
+              </div>
+                            <div className="bg-white rounded-lg shadow-lg p-6 text-center ">
+                <a href="/Profile">
+                  {" "}
+                  <img
+                    src="/assets/profile7.jpg"
+                    alt="Leader"
+                    className="w-32 h-32 mx-auto rounded-full mb-4 object-cover hover:scale-105 transition-transform duration-300"
+                  />
+                </a>
+                <h3 className="text-xl font-semibold mb-2">Ifeanyi Eze</h3>
+                <p className="text-gray-600">President</p>
                 <div className="flex mt-4 sm:justify-center  space-x-6  sm:mt-0">
                   <a href="#" className="text-blue-600 hover:text-blue-800">
                     <FaFacebook />
