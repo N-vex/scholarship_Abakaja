@@ -27,7 +27,7 @@ export const Navbar = () => {
                 />
                 <img 
                   src="./src/assets/logo02.png" 
-                  className="h-8 md:h-10" 
+                  className="hidden md:block h-8 md:h-10" 
                   alt="Logo 2"
                 />
               </span>

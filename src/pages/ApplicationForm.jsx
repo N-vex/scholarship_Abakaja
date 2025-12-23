@@ -1,4 +1,4 @@
-import { ApplicationFormSubmit } from "@/components/ui/ApplicationFormSubmit";
+import  ApplicationFormSubmit  from "@/components/ui/ApplicationFormSubmit";
 import { Send } from "lucide-react";
 
 const ApplicationForm = () => {

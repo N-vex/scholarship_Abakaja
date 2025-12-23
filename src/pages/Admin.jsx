@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { Link } from "@/components/ui/router";
-import { useNavigate } from "react-router-dom";
 import { supabase } from "@/components/ui/client";
 import { FormCard } from "@/components/ui/FormCard";
 import ProtectedRoute from "@/components/ui/ProtectedRoute";
@@ -18,61 +17,55 @@ import {
 } from "lucide-react";
 import { cn } from "@/components/ui/utils";
 
-const Admin = () => {
+function AdminPage() {
   const [forms, setForms] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [filter, setFilter] = useState("all");
   const [pendingCount, setPendingCount] = useState(0);
 
   const fetchForms = async () => {
-  setIsLoading(true);
-  try {
-        const { data, error } = await supabase
-        .from("forms")
-        .select("*")
-        .order("created_at", { ascending: false });
+    setIsLoading(true);
+    try {
+      const { data, error } = await supabase
+        .from("applications")
+        .select("*");
 
-        if (error) {
-        throw new Error(error.message);
-        }
+      console.log("Fetched applications:", data);
+      console.log("Supabase error:", error);
+      console.log("FORMS LENGTH:", data?.length);
 
-        const typedData = data || [];
-        setForms(typedData);
-        setPendingCount(typedData.filter((f) => f.status === "pending").length);
+      if (error) throw error;
+
+      setForms(data ?? []);
+      setPendingCount(
+        (data ?? []).filter((f) => f.status === "pending").length
+      );
     } catch (err) {
-        toast.error("Failed to load forms: " + err.message);
+      toast.error("Failed to load applications: " + err.message);
     } finally {
-        setIsLoading(false);
+      setIsLoading(false);
     }
-    };
+  };
 
-const navigate = useNavigate();
 
-const handleLogout = async () => {
-  const { error } = await supabase.auth.signOut();
-
-  if (error) {
-    toast.error("Failed to log out");
-  } else {
-    navigate("/login", { replace: true });
-  }
-};
+  const handleLogout = async () => {
+    const { error } = await supabase.auth.signOut();
+    if (error) {
+      toast.error("Failed to log out");
+    }
+  };
+  
 
   useEffect(() => {
     fetchForms();
 
-    // Subscribe to realtime updates
     const channel = supabase
-      .channel("forms-channel")
+      .channel("applications-channel")
       .on(
         "postgres_changes",
-        { event: "*", schema: "public", table: "forms" },
-        (payload) => {
-          if (payload.eventType === "INSERT") {
-            toast.info("New form received!", {
-              description: "A new form has been submitted.",
-            });
-          }
+        { event: "INSERT", schema: "public", table: "applications" },
+        () => {
+          toast.info("New application received");
           fetchForms();
         }
       )
@@ -106,10 +99,36 @@ const handleLogout = async () => {
     },
   ];
 
+  
+  useEffect(() => {
+    const checkUserRole = async () => {
+      const {
+        data: { user },
+        error,
+      } = await supabase.auth.getUser();
+
+      if (error) {
+        console.error("Error fetching user:", error.message);
+      } else {
+        console.log("User metadata:", user?.user_metadata);
+        console.log("User role:", user?.user_metadata?.role);
+        supabase.auth.getUser().then(({ data }) => {
+        console.log("APP META:", data.user.raw_app_meta_data);
+        console.log("ROLE:", data.user.raw_app_meta_data?.role);
+      });
+
+      }
+    };
+
+    checkUserRole();
+  }, []);
+
+
+
   return (
     <div className="min-h-screen text-white bg-background">
-     
-      <div className="glass-strong sticky  py-12 border-b border-border/50">
+      {/* Header */}
+      <div className="glass-strong sticky py-12 border-b border-border/50">
         <div className="container mx-auto px-4 py-16 flex items-center justify-between">
           <div className="flex items-center gap-4">
             <Link to="/">
@@ -145,6 +164,7 @@ const handleLogout = async () => {
         </div>
       </div>
 
+      {/* Main */}
       <main className="container mx-auto px-4 py-8">
         {/* Stats */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
@@ -221,18 +241,23 @@ const handleLogout = async () => {
             ))}
           </div>
         )}
+
+        {/* Logout */}
         <div>
-            <Button
-              variant="outline"
-              className="mt-8"
-              onClick={handleLogout}
-            >
-              Logout
-            </Button>
+          <Button variant="outline" className="mt-8" onClick={handleLogout}>
+            Logout
+          </Button>
         </div>
       </main>
     </div>
   );
-};
+}
 
-export default Admin;
+
+export default function Admin() {
+  return (
+    <ProtectedRoute adminOnly>
+      <AdminPage />
+    </ProtectedRoute>
+  );
+}

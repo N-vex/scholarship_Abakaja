@@ -1,50 +1,46 @@
 import { useEffect, useState } from "react";
+import { Navigate, useNavigate } from "react-router-dom";
 import { supabase } from "@/components/ui/client";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import { Navigate } from "react-router-dom";
 
 const ProtectedRoute = ({ children }) => {
-  const [authorized, setAuthorized] = useState(false);
+  const navigate = useNavigate();
   const [loading, setLoading] = useState(true);
+  const [session, setSession] = useState(null);
 
   useEffect(() => {
-    const checkAuth = async () => {
-      const { data } = await supabase.auth.getUser();
-      const user = data?.user;
-
-      if (user && user.email_confirmed_at) {
-        setAuthorized(true);
-      } else {
-        setAuthorized(false);
-      }
-
+    // 1️⃣ Check existing session on page load
+    const checkSession = async () => {
+      const { data } = await supabase.auth.getSession();
+      setSession(data.session);
       setLoading(false);
     };
 
-    checkAuth();
+    checkSession();
 
-    const { data: listener } = supabase.auth.onAuthStateChange(
-      (_event, session) => {
-        if (session?.user && session.user.email_confirmed_at) {
-          setAuthorized(true);
-        } else {
-          setAuthorized(false);
-        }
+    const {
+      data: { subscription },
+    } = supabase.auth.onAuthStateChange((event, session) => {
+      setSession(session);
+
+      if (event === "SIGNED_OUT") {
+        navigate("/login", { replace: true });
       }
-    );
+    });
 
-    return () => listener.subscription.unsubscribe();
-  }, []);
+
+    return () => subscription.unsubscribe();
+  }, [navigate]);
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center text-white justify-center">
+      <div className="min-h-screen flex items-center justify-center">
         Checking authentication…
       </div>
     );
   }
 
-  if (!authorized) {
+  
+  if (!session) {
     return <Navigate to="/login" replace />;
   }
 

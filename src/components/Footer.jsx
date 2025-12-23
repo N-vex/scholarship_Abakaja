@@ -55,7 +55,7 @@ export const Footer = () => {
             <ul className="space-y-3">
               <li><a href="/about" className="text-primary-foreground/80 hover:text-accent transition-colors">About Us</a></li>
               <li><a href="/scholarships" className="text-primary-foreground/80 hover:text-accent transition-colors">Scholarship</a></li>
-              <li><a href="#" className="text-primary-foreground/80 hover:text-accent transition-colors">How It Works</a></li>
+              <li><a href="#how-it-works" className="text-primary-foreground/80 hover:text-accent transition-colors">How It Works</a></li>
               <li><a href="/about" className="text-primary-foreground/80 hover:text-accent transition-colors">Success Stories</a></li>
               <li><a href="#" className="text-primary-foreground/80 hover:text-accent transition-colors">FAQs</a></li>
             </ul>
@@ -65,10 +65,10 @@ export const Footer = () => {
           <div>
             <h3 className="font-display text-lg font-bold mb-4">Scholarships</h3>
             <ul className="space-y-3">
+              <li><a href="/scholarships" className="text-primary-foreground/80 hover:text-accent transition-colors">Secondary School</a></li>
               <li><a href="/scholarships" className="text-primary-foreground/80 hover:text-accent transition-colors">Undergraduate</a></li>
-              <li><a href="/scholarships" className="text-primary-foreground/80 hover:text-accent transition-colors">Graduate</a></li>
-              <li><a href="#" className="text-primary-foreground/80 hover:text-accent transition-colors">STEM Programs</a></li>
-              <li><a href="#" className="text-primary-foreground/80 hover:text-accent transition-colors">Arts & Humanities</a></li>
+              <li><a href="#" className="text-primary-foreground/80 hover:text-accent transition-colors">Postgraduate</a></li>
+              <li><a href="#" className="text-primary-foreground/80 hover:text-accent transition-colors">Awards</a></li>
               <li><a href="/application-form" className="text-primary-foreground/80 hover:text-accent transition-colors">Apply Now</a></li>
             </ul>
           </div>
@@ -80,8 +80,8 @@ export const Footer = () => {
               <li className="flex items-start gap-3">
                 <MapPin className="h-5 w-5 text-accent shrink-0 mt-1" />
                 <span className="text-primary-foreground/80">
-                  123 Education Lane<br />
-                  Boston, MA 02101
+                  C/O St. Peter Catholic Church, Ikpa Ozuakoli-Urualla<br />
+                  Ideato LGA, Imo State, Nigeria.
                 </span>
               </li>
               <li className="flex items-center gap-3">
@@ -93,7 +93,7 @@ export const Footer = () => {
               <li className="flex items-center gap-3">
                 <Mail className="h-5 w-5 text-accent shrink-0" />
                 <a href="mailto:info@brightfuture.org" className="text-primary-foreground/80 hover:text-accent transition-colors">
-                  info@M.O.Abakaja.org
+                  foundationmoa@gmail.com
                 </a>
               </li>
             </ul>

@@ -1,7 +1,14 @@
 import React from "react";
-import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa";
+import { FaEnvelope, FaPhone } from "react-icons/fa";
 
 export const About = () => {
+  
+  const members = [ { name: " Mr. Marcel O. Agbakaja", role: "Founder", img: "/assets/about01.jpeg" }, 
+    { name: "Chijoke Anthony Agbakaja ", role: "Benefactor", img: "/assets/about2.jpeg" }, 
+    { name: "Chief Christian Asubike Enwuru Ph.D. ", role: "Chairman", img: "/assets/lord3.jpg" },
+    { name: "Ernest Asogwa", role: "CFO Outreach", img: "/assets/about9.jpg" },
+    { name: "Dr. (Sir.) Paulinus Chika Enwuru", role: "Member", img: "/assets/port1.jpeg" }, 
+    { name: "Ifeanyi Eze", role: "President", img: "/assets/unknown1.jpeg" }, ];
   return (
     <>
       <div className="w-full  text-white">
@@ -83,18 +90,18 @@ export const About = () => {
 
         
         {/* Our Team */}
-        <section className="py-16">
+        <section className="py-16 ">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl font-bold text-white mb-12 text-center">
               Our Board Members
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
               {/* Leader */}
-              <div className="bg-white rounded-lg shadow-lg p-6 text-center ">
-                <a href="/Profile">
+              {/* <div className=" backdrop-blur-sm p-6 md:p-10 rounded-lg shadow-lg text-center ">
+                <a href="#">
                   {" "}
                   <img
-                    src="/assets/profile7.jpg"
+                    src="/assets/about01.jpeg"
                     alt="Leader"
                     className="w-32 h-32 mx-auto rounded-full mb-4 object-cover hover:scale-105 transition-transform duration-300"
                   />
@@ -116,12 +123,12 @@ export const About = () => {
                   </a>
                 </div>
               </div>
-              {/* Team Member 1 */}
-              <div className="bg-white rounded-lg shadow-lg p-6 text-center">
-                <a href="/Profile">
+      
+              <div className=" backdrop-blur-sm p-6 md:p-10 rounded-lg shadow-lg text-center">
+                <a href="#">
                   {" "}
                   <img
-                    src="/assets/profile1.jpg"
+                    src="/assets/about2.jpeg"
                     alt="Leader"
                     className="w-32 h-32 mx-auto rounded-full mb-4 object-cover hover:scale-105 transition-transform duration-300"
                   />
@@ -145,12 +152,12 @@ export const About = () => {
                   </a>
                 </div>
               </div>
-              {/* Team Member 2 */}
-              <div className="bg-white rounded-lg shadow-lg p-6 text-center">
-                <a href="/Profile">
+
+              <div className="backdrop-blur-sm p-6 md:p-10 rounded-lg shadow-lg text-center">
+                <a href="#">
                   {" "}
                   <img
-                    src="/assets/profile5.jpg"
+                    src="/assets/lord3.jpg"
                     alt="Leader"
                     className="w-32 h-32 mx-auto rounded-full mb-4 object-cover hover:scale-105 transition-transform duration-300"
                   />
@@ -172,12 +179,12 @@ export const About = () => {
                   </a>
                 </div>
               </div>
-              {/* Team Member 3 */}
-              <div className="bg-white rounded-lg shadow-lg p-6 text-center">
-                <a href="/Profile">
+
+              <div className="backdrop-blur-sm p-6 md:p-10 rounded-lg shadow-lg text-center">
+                <a href="#">
                   {" "}
                   <img
-                    src="/assets/profile2.jpg"
+                    src="/assets/about9.jpg"
                     alt="Leader"
                     className="w-32 h-32 mx-auto rounded-full mb-4 object-cover hover:scale-105 transition-transform duration-300"
                   />
@@ -199,11 +206,11 @@ export const About = () => {
                   </a>
                 </div>
               </div>
-                            <div className="bg-white rounded-lg shadow-lg p-6 text-center ">
-                <a href="/Profile">
+                            <div className="backdrop-blur-sm p-6 md:p-10 rounded-lg shadow-lg text-center ">
+                <a href="#">
                   {" "}
                   <img
-                    src="/assets/profile7.jpg"
+                    src="/assets/port1.jpeg"
                     alt="Leader"
                     className="w-32 h-32 mx-auto rounded-full mb-4 object-cover hover:scale-105 transition-transform duration-300"
                   />
@@ -225,11 +232,11 @@ export const About = () => {
                   </a>
                 </div>
               </div>
-                            <div className="bg-white rounded-lg shadow-lg p-6 text-center ">
-                <a href="/Profile">
+                            <div className="backdrop-blur-sm p-6 md:p-10 rounded-lg shadow-lg text-center ">
+                <a href="#">
                   {" "}
                   <img
-                    src="/assets/profile7.jpg"
+                    src="/assets/unknown1.jpeg"
                     alt="Leader"
                     className="w-32 h-32 mx-auto rounded-full mb-4 object-cover hover:scale-105 transition-transform duration-300"
                   />
@@ -251,11 +258,11 @@ export const About = () => {
                   </a>
                 </div>
               </div>
-                            <div className="bg-white rounded-lg shadow-lg p-6 text-center ">
-                <a href="/Profile">
+                            <div className="backdrop-blur-sm p-6 md:p-10 rounded-lg shadow-lg text-center ">
+                <a href="#">
                   {" "}
                   <img
-                    src="/assets/profile7.jpg"
+                    src="/assets/unknown1.jpeg"
                     alt="Leader"
                     className="w-32 h-32 mx-auto rounded-full mb-4 object-cover hover:scale-105 transition-transform duration-300"
                   />
@@ -277,11 +284,11 @@ export const About = () => {
                   </a>
                 </div>
               </div>
-                            <div className="bg-white rounded-lg shadow-lg p-6 text-center ">
-                <a href="/Profile">
+                            <div className="backdrop-blur-sm p-6 md:p-10 rounded-lg shadow-lg text-center">
+                <a href="#">
                   {" "}
                   <img
-                    src="/assets/profile7.jpg"
+                    src="/assets/unknown1.jpeg"
                     alt="Leader"
                     className="w-32 h-32 mx-auto rounded-full mb-4 object-cover hover:scale-105 transition-transform duration-300"
                   />
@@ -302,7 +309,46 @@ export const About = () => {
                     <FaLinkedin />
                   </a>
                 </div>
-              </div>
+              </div> */}
+                       <div className="relative w-[350px] h-[350px] sm:w-[500px] sm:h-[500px] md:w-[700px] md:h-[700px] mx-auto flex items-center justify-center">
+  {members.map((member, index, arr) => {
+    const angle = (index / arr.length) * 2 * Math.PI;
+    const radius = arr.length > 4 
+      ? (window.innerWidth < 640 ? 140 : window.innerWidth < 1024 ? 200 : 280) 
+      : 200;
+    const x = radius * Math.cos(angle);
+    const y = radius * Math.sin(angle);
+
+    return (
+      <div
+        key={member.name + index}
+        className="absolute w-32 sm:w-40 md:w-48 text-center"
+        style={{
+          left: `calc(50% + ${x}px - 4rem)`,
+          top: `calc(50% + ${y}px - 4rem)`,
+        }}
+      >
+        <img
+          src={member.img}
+          alt={member.name}
+          className="w-24 h-24 sm:w-28 sm:h-28 md:w-36 md:h-36 mx-auto rounded-full mb-2 object-cover hover:scale-105 transition-transform duration-300 shadow-lg"
+        />
+        <h3 className="text-sm sm:text-base md:text-lg font-semibold">{member.name}</h3>
+        <p className="text-gray-600 text-xs sm:text-sm">{member.role}</p>
+        <div className="flex flex-wrap justify-center gap-3 mt-2">
+          <a href={`mailto:${member.email}`} className="text-red-600 hover:text-red-800"><FaEnvelope /></a>
+          <a href={`tel:${member.phone}`} className="text-green-600 hover:text-green-800"><FaPhone /></a>
+          {/* <a href="#" className="text-blue-600 hover:text-blue-800"><FaFacebook /></a>
+          <a href="#" className="text-blue-400 hover:text-blue-600"><FaTwitter /></a>
+          <a href="#" className="text-pink-500 hover:text-pink-700"><FaInstagram /></a>
+          <a href="#" className="text-blue-700 hover:text-blue-900"><FaLinkedin /></a> */}
+        </div>
+      </div>
+    );
+  })}
+</div>
+
+
             </div>
           </div>
         </section>

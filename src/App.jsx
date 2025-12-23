@@ -8,11 +8,12 @@ import {About} from "./pages/About";
 import {Contact} from "./pages/Contact";
 import { Card } from "@/components/UI/Card";
 import ApplicationForm from "./pages/ApplicationForm"; 
-import { ApplicationFormSubmit } from "@/components/ui/ApplicationFormSubmit";
+import ApplicationFormSubmit  from "@/components/ui/ApplicationFormSubmit";
 import Admin from "./pages/Admin"; 
 import {LoginPage} from "./pages/LoginPage";
 import ProtectedRoute from "./components/ui/ProtectedRoute";
 import { SignupPage } from "./pages/SignUpPage";
+import ScholarProfile from "./pages/ScholarProfile";
 
 export const App = () => {
     return (
@@ -31,12 +32,13 @@ export const App = () => {
                         path="/admin"
                         element={
                             <ProtectedRoute>
-                            <Admin />
+                                <Admin />
                             </ProtectedRoute>
                         }
                         />
                         <Route path="/form-submission" element={<ApplicationFormSubmit />} />
                         <Route path="/signup" element={<SignupPage />} />
+                        <Route path="/scholar-profile" element={<ScholarProfile />} />
                     </Routes>
                 </main>
                 <Footer />

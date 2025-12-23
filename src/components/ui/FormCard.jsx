@@ -3,19 +3,23 @@ import { format } from "date-fns";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
-import { supabase } from "@/components/ui/client";
-import {Database} from "@/components/ui/type";
+import JsPDF from "jspdf";
+
+import {
+  approveApplication,
+  rejectApplication,
+} from "@/components/ui/ApplicationAction";
 import { toast } from "sonner";
 import {
   CheckCircle2,
   XCircle,
-  Mail,
   Clock,
   User,
   MessageSquare,
   Loader2,
   ChevronDown,
   ChevronUp,
+  Download,
 } from "lucide-react";
 import { cn } from "@/components/ui/utils";
 
@@ -23,61 +27,90 @@ export const FormCard = ({ form, onUpdate, animationDelay = 0 }) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [adminNotes, setAdminNotes] = useState(form.admin_notes || "");
   const [isUpdating, setIsUpdating] = useState(false);
-  const [isSendingEmail, setIsSendingEmail] = useState(false);
+  const [isDownloading, setIsDownloading] = useState(false);
 
-    const updateStatus = async (status) => {
+  const updateStatus = async (status) => {
     setIsUpdating(true);
     try {
-        const { error } = await supabase
-        .from("forms")
-        .update({ status, admin_notes: adminNotes })
-        .eq("id", form.id);
+      if (status === "approved") {
+        await approveApplication(form.id, adminNotes);
+      } else {
+        await rejectApplication(form.id, adminNotes);
+      }
 
-        if (error) {
-        // throw a proper Error so catch receives it
-        throw new Error(error.message);
-        }
-
-        toast.success(`Form ${status}!`, {
-        description: `The form has been ${status} successfully.`,
-        });
-        onUpdate();
+      toast.success(`Application ${status}`);
+      onUpdate();
     } catch (err) {
-        // use `err` instead of `error` to avoid shadowing
-        toast.error("Failed to update form status: " + err.message);
+      toast.error(err.message || "Failed to update application");
     } finally {
-        setIsUpdating(false);
+      setIsUpdating(false);
     }
+  };
+
+const handleDownload = async () => {
+  try {
+    setIsDownloading(true);
+
+    const doc = new JsPDF();
+
+    let y = 10; // vertical position
+
+    const addLine = (label, value) => {
+      doc.setFont("helvetica", "bold");
+      doc.text(label, 10, y);
+      y += 6;
+
+      doc.setFont("helvetica", "normal");
+      doc.text(String(value || "—"), 10, y);
+      y += 10;
     };
 
-    const sendEmail = async () => {
-    setIsSendingEmail(true);
-    try {
-        // Simulate email sending (in production, you'd call an edge function)
-        await new Promise((resolve) => setTimeout(resolve, 1500));
+    doc.setFontSize(14);
+    doc.text("Scholarship Application", 10, y);
+    y += 12;
 
-        const { error } = await supabase
-        .from("forms")
-        .update({ email_sent: true })
-        .eq("id", form.id);
+    doc.setFontSize(10);
+    addLine("Application ID:", form.id);
+    addLine("Surname:", form.surname);
+    addLine("Other Names:", form.other_names);
+    addLine("Email:", form.email);
+    addLine("Date of Birth:", form.date_of_birth);
+    addLine("Address:", form.permanent_address);
+    addLine("Phone:", form.phone);
+    addLine("Gender:", form.gender);
+    addLine("Course of Study:", form.course_study);
+    addLine("University Choice:", form.university_choice);
+    addLine("JAMB Score:", form.jamb_score);
+    addLine("UTME Score:", form.utme_score);
+    addLine("Declaration:", form.declaration);
+    addLine("Status:", form.status);
 
-        if (error) {
-        throw new Error(error.message);
-        }
+    doc.setFont("helvetica", "bold");
+    doc.text("Personal Statement:", 10, y);
+    y += 6;
 
-        toast.success("Email sent!", {
-        description: `Notification email sent to ${form.email}`,
-        });
-        onUpdate();
-    } catch (err) {
-        toast.error("Failed to send email: " + err.message);
-    } finally {
-        setIsSendingEmail(false);
-    }
-    };
+    doc.setFont("helvetica", "normal");
+    doc.text(
+      doc.splitTextToSize(form.statement || "—", 180),
+      10,
+      y
+    );
 
+    const fileName = `application-${form.surname}-${format(
+      new Date(form.created_at),
+      "yyyy-MM-dd"
+    )}.pdf`;
 
+    doc.save(fileName);
 
+    toast.success("PDF downloaded successfully");
+  } catch (err) {
+    console.error("PDF download error:", err);
+    toast.error("Failed to generate PDF");
+  } finally {
+    setIsDownloading(false);
+  }
+};
 
   const statusVariant = {
     pending: "pending",
@@ -99,20 +132,16 @@ export const FormCard = ({ form, onUpdate, animationDelay = 0 }) => {
             <Badge variant={statusVariant[form.status]} className="capitalize">
               {form.status}
             </Badge>
-            {form.email_sent && (
-              <Badge variant="secondary" className="gap-1">
-                <Mail className="w-3 h-3" />
-                Email Sent
-              </Badge>
-            )}
           </div>
+
           <h3 className="text-lg font-semibold text-foreground truncate">
-            {form.subject}
+            {form.surname} {form.other_names}
           </h3>
+
           <div className="flex items-center gap-4 mt-2 text-sm text-muted-foreground">
             <span className="flex items-center gap-1">
               <User className="w-4 h-4" />
-              {form.name}
+              {form.email}
             </span>
             <span className="flex items-center gap-1">
               <Clock className="w-4 h-4" />
@@ -120,6 +149,7 @@ export const FormCard = ({ form, onUpdate, animationDelay = 0 }) => {
             </span>
           </div>
         </div>
+
         <Button
           variant="ghost"
           size="icon"
@@ -134,25 +164,39 @@ export const FormCard = ({ form, onUpdate, animationDelay = 0 }) => {
           <div className="p-4 rounded-lg bg-muted/50">
             <div className="flex items-center gap-2 mb-2 text-sm font-medium text-muted-foreground">
               <MessageSquare className="w-4 h-4" />
-              Message
+              Statement
             </div>
-            <p className="text-foreground whitespace-pre-wrap">{form.message}</p>
+            <p className="text-foreground whitespace-pre-wrap">
+              {form.statement}
+            </p>
           </div>
 
-          <div className="p-4 rounded-lg bg-muted/50">
+          <div className="p-4 rounded-lg text-black bg-muted/50">
             <label className="block text-sm font-medium text-muted-foreground mb-2">
               Admin Notes
             </label>
             <Textarea
               value={adminNotes}
               onChange={(e) => setAdminNotes(e.target.value)}
-              placeholder="Add notes about this submission..."
-              className="resize-none"
+              placeholder="Add notes..."
               rows={3}
             />
           </div>
 
-          <div className="flex flex-wrap gap-3 pt-2">
+          <div className="flex flex-wrap gap-3">
+            <Button
+              variant="secondary"
+              onClick={handleDownload}
+              disabled={isDownloading}
+            >
+              {isDownloading ? (
+                <Loader2 className="animate-spin" />
+              ) : (
+                <Download />
+              )}
+              Download PDF
+            </Button>
+
             {form.status === "pending" && (
               <>
                 <Button
@@ -167,6 +211,7 @@ export const FormCard = ({ form, onUpdate, animationDelay = 0 }) => {
                   )}
                   Approve
                 </Button>
+
                 <Button
                   variant="destructive"
                   onClick={() => updateStatus("rejected")}
@@ -181,23 +226,9 @@ export const FormCard = ({ form, onUpdate, animationDelay = 0 }) => {
                 </Button>
               </>
             )}
-            {form.status !== "pending" && !form.email_sent && (
-              <Button
-                variant="default"
-                onClick={sendEmail}
-                disabled={isSendingEmail}
-              >
-                {isSendingEmail ? (
-                  <Loader2 className="animate-spin" />
-                ) : (
-                  <Mail />
-                )}
-                Send Email to {form.email}
-              </Button>
-            )}
           </div>
         </div>
       )}
     </div>
   );
-};
+}; // <--- Fixed: Component was missing its final closing brace

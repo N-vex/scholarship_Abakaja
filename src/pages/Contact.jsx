@@ -173,7 +173,7 @@ export const Contact = () => {
 
               <div className="ml-16">
                 <h4 className="font-semibold">Email</h4>
-                <p className="text-sm text-gray-600 mt-1">hello@example.com</p>
+                <p className="text-sm text-gray-600 mt-1">foundationmoa@gmail.com</p>
               </div>
             </motion.div>
 
@@ -207,7 +207,8 @@ export const Contact = () => {
 
               <div className="ml-16">
                 <h4 className="font-semibold">Address</h4>
-                <p className="text-sm text-gray-600 mt-1">123 Main Street, City, State 12345</p>
+                <p className="text-sm text-gray-600 mt-1"> C/O St. Peter Catholic Church, Ikpa Ozuakoli-Urualla<br />
+                  Ideato LGA, Imo State, Nigeria.</p>
               </div>
             </motion.div>
           </motion.div>

@@ -1,19 +1,21 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { supabase } from "@/components/ui/client"; 
 import "@/pages/LoginPage.css";
 
 export const LoginPage = () => {
   const navigate = useNavigate();
+  const [errorMessage, setErrorMessage] = useState("");
 
-  const handleGoogleLogin = async () => {
-    const { error } = await supabase.auth.signInWithOAuth({
-      provider: "google",
-    });
-    if (error) {
-      console.error("Google login error:", error.message);
-    }
-  };
+    const handleGoogleLogin = async () => {
+      await supabase.auth.signInWithOAuth({
+        provider: "google",
+        options: {
+          redirectTo: `${window.location.origin}/admin`,
+        },
+      });
+    };
+
 
   const handleGithubLogin = async () => {
     const { error } = await supabase.auth.signInWithOAuth({
@@ -24,12 +26,41 @@ export const LoginPage = () => {
     }
   };
 
+  const handleEmailLogin = async (e) => {
+    e.preventDefault();
+
+    const email = e.target.email.value.trim();
+    const password = e.target.password.value;
+
+    try {
+      const { data, error } = await supabase.auth.signInWithPassword({
+        email,
+        password,
+      });
+
+      if (error) {
+        if (error.message.includes("Invalid login credentials")) {
+          setErrorMessage("Wrong password or email. Please try again.");
+        } else {
+          setErrorMessage(error.message);
+        }
+      } else if (data?.user) {
+        // ✅ Successful login → navigate to admin
+        navigate("/admin", { replace: true });
+      }
+    } catch (err) {
+      console.error("Unexpected login error:", err);
+      setErrorMessage("Something went wrong. Please try again later.");
+    }
+  };
+
   useEffect(() => {
     // Check if user is already logged in
     const checkSession = async () => {
-      const { data } = await supabase.auth.getSession();
-      if (data.session?.user) {
-        navigate("/admin"); // redirect if logged in
+        const { data: { session } } = await supabase.auth.getSession();
+
+      if (session) {
+        navigate("/admin", { replace: true });
       }
     };
     checkSession();
@@ -63,15 +94,15 @@ export const LoginPage = () => {
           No Account? <a href="/signup" className="text-blue-600">Sign Up</a>
         </p>
 
-        <form className="login-form space-y-4">
+        <form onSubmit={handleEmailLogin} className="login-form space-y-4">
           <div className="flex flex-col">
             <label className="mb-1">Email address</label>
-            <input type="email" placeholder="Enter your email" className="p-2 border rounded" />
+            <input  name="email" type="email" placeholder="Enter your email" className="p-2 border rounded" />
           </div>
 
           <div className="flex flex-col">
             <label className="mb-1">Password</label>
-            <input type="password" placeholder="••••••••" className="p-2 border rounded" />
+            <input  name="password" type="password" placeholder="••••••••" className="p-2 border rounded" />
           </div>
 
           <div className="form-row flex justify-between items-center text-sm">
@@ -84,6 +115,10 @@ export const LoginPage = () => {
           <button type="submit" className="primary-btn w-full py-3 bg-black text-white rounded">
             Sign in
           </button>
+
+                    {errorMessage && (
+            <p className="text-red-600 text-sm mt-2">{errorMessage}</p>
+          )}
         </form>
 
         <div className="divider my-6 text-center border-b relative">

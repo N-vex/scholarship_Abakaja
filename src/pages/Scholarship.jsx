@@ -10,7 +10,7 @@ const sampleScholarships = [
   {
     id: 1,
     title: "Best Graduating Student Award",
-    level: "Secondary / University",
+    level: "Secondary / University / Postgraduate",
     award: "Award and Recognition",
     deadline: "2026-12-30",
     duration: "Final Year",
@@ -38,6 +38,17 @@ const sampleScholarships = [
     duration: "One term / One session",
     summary:
       "For students proceeding into secondary school who show strong academic interest and financial need. Includes partial or full support.",
+    applyUrl: "#",
+  },
+  {
+    id: 4,
+    title: "Postgraduate Excellence Scholarship",
+    level: "Postgraduate",
+    award: "Tuition and Research Grant",
+    deadline: "2026-11-15",
+    duration: "One Academic Year",
+    summary:
+      "For students pursuing master's or doctoral degrees. Awarded based on academic excellence, research potential, and leadership qualities.",
     applyUrl: "#",
   },
 ];
@@ -214,7 +225,7 @@ export const Scholarship = ({ scholarships = sampleScholarships }) => {
               </div>
             </div>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
       {filtered.map((s) => (
         <article
           key={s.id}
@@ -263,7 +274,7 @@ export const Scholarship = ({ scholarships = sampleScholarships }) => {
             </p>
           </div>
           <strong >
-            <p className="mb-3 text-3xl text-body text-center" >
+            <p className="mb-3 text-3xl text-body text-center" id="requirements" >
               Eligibility and requirements.
             </p>
           </strong>
