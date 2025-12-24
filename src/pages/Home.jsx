@@ -1,8 +1,8 @@
 import React, { useEffect, useState, useRef, Link } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import about01 from "../assets/about01.jpeg";
-import about2 from "../assets/about2.jpeg";
-import about9 from "../assets/about9.jpg";
+import about01 from "/assets/about01.jpeg";
+import about2 from "/assets/about2.jpeg";
+import about9 from "/assets/about9.jpg";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import {
@@ -263,10 +263,7 @@ export const Home = () => {
         >
           {slides.map(({ image, title, subtitle }) => (
             <SwiperSlide key={image} className="relative">
-              <img
-                src={`/assets/${image}`}
-                className="w-full h-full object-cover"
-              />
+              <img src={image} className="w-full h-full object-cover" />
 
               <div className="absolute inset-0 flex items-end justify-start p-6">
                 <div className="bg-black/50 p-8 rounded-2xl backdrop-blur-sm text-left max-w-2xl">
@@ -350,30 +347,6 @@ export const Home = () => {
                   </div>
                 );
               })}
-            </div>
-
-            {/* CTA Section */}
-            <div className="mt-16 text-center bg-muted/50 rounded-2xl bg-linear-to-br from-green-500 via-green-400 to-blue-600 p-8 border-white border-border animate-fade-in-up stagger-4">
-              <h3 className="font-display text-2xl font-bold text-foreground mb-4">
-                Ready to Start Your Journey?
-              </h3>
-              <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-                Applications are reviewed on a rolling basis. The sooner you
-                apply, the sooner you could be on your way to achieving your
-                educational goals.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="/application-form">
-                  <button className="px-8 py-3 bg-primary text-primary-foreground rounded-lg font-semibold hover:bg-primary/90 transition-all hover:scale-105">
-                    Start Application
-                  </button>
-                </a>
-                <a href="/scholarships">
-                  <button className="px-8 py-3 border-2 border-border text-foreground rounded-lg font-semibold hover:bg-muted transition-all">
-                    View Requirements
-                  </button>
-                </a>
-              </div>
             </div>
           </div>
         </div>
@@ -633,6 +606,32 @@ export const Home = () => {
           </div>
         </div>
       </section>
+
+      {/* CTA Section */}
+      <div className="container mx-auto px-4">
+        <div className="mt-16 text-center bg-muted/50 rounded-2xl text-white bg-linear-to-br from-green-500 via-green-400 to-blue-600 p-8 border-white border-border animate-fade-in-up stagger-4">
+          <h3 className="font-display text-2xl font-bold text-foreground mb-6">
+            Ready to Start Your Journey?
+          </h3>
+          <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
+            Applications are reviewed on a rolling basis. The sooner you apply,
+            the sooner you could be on your way to achieving your educational
+            goals.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="/application-form">
+              <button className="px-8 py-3 bg-primary text-primary-foreground rounded-lg font-semibold hover:bg-primary/90 transition-all hover:scale-105">
+                Start Application
+              </button>
+            </a>
+            <a href="/scholarships">
+              <button className="px-8 py-3 border-2 border-border text-foreground rounded-lg font-semibold hover:bg-muted transition-all">
+                View Requirements
+              </button>
+            </a>
+          </div>
+        </div>
+      </div>
     </>
   );
 };
