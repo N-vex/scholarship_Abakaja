@@ -7,7 +7,7 @@ import Toast from "../components/Toast";
 export const Contact = () => {
  
   const EMAILJS_SERVICE_ID = "service_dlvtc6f";
-  const EMAILJS_TEMPLATE_ID = "template_s09alca";
+  const EMAILJS_TEMPLATE_ID = "template_e96b7m7";
   const EMAILJS_PUBLIC_KEY = "J1zBTED4no0ZC3pPm";
   // ===========================================================
 
@@ -190,7 +190,8 @@ export const Contact = () => {
 
               <div className="ml-16">
                 <h4 className="font-semibold">Phone</h4>
-                <p className="text-sm text-gray-600 mt-1">+1 (555) 123-4567</p>
+                <p className="text-sm text-gray-600 mt-1">+234 809 976 1346, +234 802 669 9163</p>
+
               </div>
             </motion.div>
 

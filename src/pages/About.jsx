@@ -39,7 +39,7 @@ export const About = () => {
     
 
         {/* Story Section */}
-        <section className="py-20 container  mx-auto px-6">
+        <section className="py-10 container  mx-auto px-6">
           <div className="mb-10">
             <h3 className="text-3xl font-bold mb-4 text-white">Our Story</h3>
             <p className="text-lg leading-relaxed text-white">
@@ -90,7 +90,7 @@ export const About = () => {
 
         
         {/* Our Team */}
-        <section className="py-16 ">
+        <section className="py-10 ">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl font-bold text-white mb-12 text-center">
               Our Board Members
@@ -106,13 +106,13 @@ export const About = () => {
                     className="w-32 h-32 mx-auto rounded-full mb-4 object-cover hover:scale-105 transition-transform duration-300"
                   />
                 </a>
-                <h3 className="text-xl font-semibold mb-2">Ifeanyi Eze</h3>
+                <h3 className="text-xl font-semibold mb-2"> Mr. Marcel O. Agbakaja.</h3>
                 <p className="text-gray-600">President</p>
                 <div className="flex mt-4 sm:justify-center  space-x-6  sm:mt-0">
-                  <a href="#" className="text-blue-600 hover:text-blue-800">
+                  <a href="#" className="text-white hover:text-blue-800">
                     <FaEnvelope />
                   </a>
-                  <a href="#" className="text-blue-400 hover:text-blue-600">
+                  <a href="#" className="text-white hover:text-blue-600">
                     <FaPhone />
                   </a>
                 </div>
@@ -130,13 +130,15 @@ export const About = () => {
                 <h3 className="text-xl font-semibold mb-2">
                   Okechukwu Ndubuisi
                 </h3>
-                <p className="text-gray-600">Vice president</p>
+                <p className="text-gray-600">Benefactor</p>
                 <div className="flex mt-4 sm:justify-center  space-x-6  sm:mt-0">
-                  <a href="#" className="text-blue-600 hover:text-blue-800">
+                  <a href="#" className="text-white hover:text-blue-800">
                     <FaEnvelope />
+                    <h5>tonyagba@yahoo.com</h5>
                   </a>
-                  <a href="#" className="text-blue-400 hover:text-blue-600">
+                  <a href="#" className="text-white hover:text-blue-600">
                     <FaPhone />
+                    <h5> +234  809 976 1346</h5>
                   </a>
                 </div>
               </div>
@@ -150,14 +152,16 @@ export const About = () => {
                     className="w-32 h-32 mx-auto rounded-full mb-4 object-cover hover:scale-105 transition-transform duration-300"
                   />
                 </a>
-                <h3 className="text-xl font-semibold mb-2">Chinedu Alumona</h3>
-                <p className="text-gray-600"> Secretary</p>
+                <h3 className="text-xl font-semibold mb-2">Chief Christian Asubike Enwuru Ph.D. </h3>
+                <p className="text-gray-600"> Chairman</p>
                 <div className="flex mt-4 sm:justify-center  space-x-6  sm:mt-0">
-                  <a href="#" className="text-blue-600 hover:text-blue-800">
+                  <a href="#" className="text-white hover:text-blue-800">
                     <FaEnvelope />
+                    <h4>enwuru@ymail.com</h4>
                   </a>
-                  <a href="#" className="text-blue-400 hover:text-blue-600">
+                  <a href="#" className="text-white hover:text-blue-600">
                     <FaPhone />
+                    <h4>+234 803 382 4412</h4>
                   </a>
                 </div>
               </div>
@@ -171,14 +175,16 @@ export const About = () => {
                     className="w-32 h-32 mx-auto rounded-full mb-4 object-cover hover:scale-105 transition-transform duration-300"
                   />
                 </a>
-                <h3 className="text-xl font-semibold mb-2">Ernest Asogwa</h3>
-                <p className="text-gray-600">CFO Outreach</p>
+                <h3 className="text-xl font-semibold mb-2">Dr.  Obiesie Ahuize Emmanuel </h3>
+                <p className="text-gray-600">Secretary</p>
                 <div className="flex mt-4 sm:justify-center  space-x-6  sm:mt-0">
-                  <a href="#" className="text-blue-600 hover:text-blue-800">
+                  <a href="#" className="text-white hover:text-blue-800">
                     <FaEnvelope />
+                    <h4>santasibito@yahoo.com </h4>
                   </a>
-                  <a href="#" className="text-blue-400 hover:text-blue-600">
+                  <a href="#" className="text-white hover:text-blue-600">
                     <FaPhone />
+                    <h4>+234 803 401 2598</h4>
                   </a>
                 </div>
               </div>
@@ -191,14 +197,16 @@ export const About = () => {
                     className="w-32 h-32 mx-auto rounded-full mb-4 object-cover hover:scale-105 transition-transform duration-300"
                   />
                 </a>
-                <h3 className="text-xl font-semibold mb-2">Ifeanyi Eze</h3>
-                <p className="text-gray-600">President</p>
+                <h3 className="text-xl font-semibold mb-2">Dr. (Sir.) Paulinus Chika Enwuru </h3>
+                <p className="text-gray-600">Member</p>
                 <div className="flex mt-4 sm:justify-center  space-x-6  sm:mt-0">
-                  <a href="#" className="text-blue-600 hover:text-blue-800">
+                  <a href="#" className="text-white hover:text-blue-800">
                     <FaEnvelope />
+                    <h4>enwuruchikapaul1@gmail.com</h4>
                   </a>
-                  <a href="#" className="text-blue-400 hover:text-blue-600">
+                  <a href="#" className="text-white hover:text-blue-600">
                     <FaPhone />
+                    <h4>+234 806 395 5871</h4>
                   </a>
                 </div>
               </div>
@@ -211,14 +219,16 @@ export const About = () => {
                     className="w-32 h-32 mx-auto rounded-full mb-4 object-cover hover:scale-105 transition-transform duration-300"
                   />
                 </a>
-                <h3 className="text-xl font-semibold mb-2">Ifeanyi Eze</h3>
-                <p className="text-gray-600">President</p>
+                <h3 className="text-xl font-semibold mb-2">Rev. Fr. Dr. Paschal Chukwuemeka Amagba </h3>
+                <p className="text-gray-600">Member</p>
                 <div className="flex mt-4 sm:justify-center  space-x-6  sm:mt-0">
-                  <a href="#" className="text-blue-600 hover:text-blue-800">
+                  <a href="#" className="text-white hover:text-blue-800">
                     <FaEnvelope />
+                    <h4>hosana2505@gmail.com </h4>
                   </a>
-                  <a href="#" className="text-blue-400 hover:text-blue-600">
+                  <a href="#" className="text-white hover:text-blue-600">
                     <FaPhone />
+                    <h4>+234 908 275 0728</h4>
                   </a>
                 </div>
               </div>
@@ -231,14 +241,16 @@ export const About = () => {
                     className="w-32 h-32 mx-auto rounded-full mb-4 object-cover hover:scale-105 transition-transform duration-300"
                   />
                 </a>
-                <h3 className="text-xl font-semibold mb-2">Ifeanyi Eze</h3>
-                <p className="text-gray-600">President</p>
+                <h3 className="text-xl font-semibold mb-2">Oliver Chimmamkpa Obiukwu </h3>
+                <p className="text-gray-600">Member</p>
                 <div className="flex mt-4 sm:justify-center  space-x-6  sm:mt-0">
-                  <a href="#" className="text-blue-600 hover:text-blue-800">
+                  <a href="#" className="text-white hover:text-blue-800">
                     <FaEnvelope />
+                    <h4>obiukwuoliver@yahoo.com</h4>
                   </a>
-                  <a href="#" className="text-blue-400 hover:text-blue-600">
+                  <a href="#" className="text-white hover:text-blue-600">
                     <FaPhone />
+                    <h4>+234 803 508 1449</h4>
                   </a>
                 </div>
               </div>
@@ -251,14 +263,16 @@ export const About = () => {
                     className="w-32 h-32 mx-auto rounded-full mb-4 object-cover hover:scale-105 transition-transform duration-300"
                   />
                 </a>
-                <h3 className="text-xl font-semibold mb-2">Ifeanyi Eze</h3>
-                <p className="text-gray-600">President</p>
+                <h3 className="text-xl font-semibold mb-2">Barr. Wisdom Okezie Igweh </h3>
+                <p className="text-gray-600">Member</p>
                 <div className="flex mt-4 sm:justify-center  space-x-6  sm:mt-0">
-                  <a href="#" className="text-blue-600 hover:text-blue-800">
+                  <a href="#" className="text-white hover:text-blue-800">
                     <FaEnvelope />
+                    <h4> pnigwe@yahoo.com</h4>
                   </a>
-                  <a href="#" className="text-blue-400 hover:text-blue-600">
+                  <a href="#" className="text-white hover:text-blue-600">
                     <FaPhone />
+                    <h4>+234 803 382 7589</h4>
                   </a>
                 </div>
               </div>
