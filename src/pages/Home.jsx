@@ -14,7 +14,7 @@ import {
   ChevronRight,
 } from "lucide-react";
 import { motion } from "framer-motion";
-import { Card } from "@/components/ui/Card";
+import { Card } from "@/components/ui/card";
 import { Quote } from "lucide-react";
 import {
   Linkedin,

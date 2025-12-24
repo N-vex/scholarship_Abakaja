@@ -3,12 +3,12 @@ import { FaEnvelope, FaPhone } from "react-icons/fa";
 
 export const About = () => {
   
-  const members = [ { name: " Mr. Marcel O. Agbakaja", role: "Founder", img: "/assets/about01.jpeg" }, 
-    { name: "Chijoke Anthony Agbakaja ", role: "Benefactor", img: "/assets/about2.jpeg" }, 
-    { name: "Chief Christian Asubike Enwuru Ph.D. ", role: "Chairman", img: "/assets/lord3.jpg" },
-    { name: "Ernest Asogwa", role: "CFO Outreach", img: "/assets/about9.jpg" },
-    { name: "Dr. (Sir.) Paulinus Chika Enwuru", role: "Member", img: "/assets/port1.jpeg" }, 
-    { name: "Ifeanyi Eze", role: "President", img: "/assets/unknown1.jpeg" }, ];
+  // const members = [ { name: " Mr. Marcel O. Agbakaja", role: "Founder", img: "/assets/about01.jpeg" }, 
+  //   { name: "Chijoke Anthony Agbakaja ", role: "Benefactor", img: "/assets/about2.jpeg" }, 
+  //   { name: "Chief Christian Asubike Enwuru Ph.D. ", role: "Chairman", img: "/assets/lord3.jpg" },
+  //   { name: "Ernest Asogwa", role: "CFO Outreach", img: "/assets/about9.jpg" },
+  //   { name: "Dr. (Sir.) Paulinus Chika Enwuru", role: "Member", img: "/assets/port1.jpeg" }, 
+  //   { name: "Ifeanyi Eze", role: "President", img: "/assets/unknown1.jpeg" }, ];
   return (
     <>
       <div className="w-full  text-white">
@@ -97,7 +97,7 @@ export const About = () => {
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
               {/* Leader */}
-              {/* <div className=" backdrop-blur-sm p-6 md:p-10 rounded-lg shadow-lg text-center ">
+              <div className=" backdrop-blur-sm p-6 md:p-10 rounded-lg shadow-lg text-center ">
                 <a href="#">
                   {" "}
                   <img
@@ -110,16 +110,10 @@ export const About = () => {
                 <p className="text-gray-600">President</p>
                 <div className="flex mt-4 sm:justify-center  space-x-6  sm:mt-0">
                   <a href="#" className="text-blue-600 hover:text-blue-800">
-                    <FaFacebook />
+                    <FaEnvelope />
                   </a>
                   <a href="#" className="text-blue-400 hover:text-blue-600">
-                    <FaTwitter />
-                  </a>
-                  <a href="#" className="text-pink-500 hover:text-pink-700">
-                    <FaInstagram />
-                  </a>
-                  <a href="#" className="text-blue-700 hover:text-blue-900">
-                    <FaLinkedin />
+                    <FaPhone />
                   </a>
                 </div>
               </div>
@@ -139,16 +133,10 @@ export const About = () => {
                 <p className="text-gray-600">Vice president</p>
                 <div className="flex mt-4 sm:justify-center  space-x-6  sm:mt-0">
                   <a href="#" className="text-blue-600 hover:text-blue-800">
-                    <FaFacebook />
+                    <FaEnvelope />
                   </a>
                   <a href="#" className="text-blue-400 hover:text-blue-600">
-                    <FaTwitter />
-                  </a>
-                  <a href="#" className="text-pink-500 hover:text-pink-700">
-                    <FaInstagram />
-                  </a>
-                  <a href="#" className="text-blue-700 hover:text-blue-900">
-                    <FaLinkedin />
+                    <FaPhone />
                   </a>
                 </div>
               </div>
@@ -166,16 +154,10 @@ export const About = () => {
                 <p className="text-gray-600"> Secretary</p>
                 <div className="flex mt-4 sm:justify-center  space-x-6  sm:mt-0">
                   <a href="#" className="text-blue-600 hover:text-blue-800">
-                    <FaFacebook />
+                    <FaEnvelope />
                   </a>
                   <a href="#" className="text-blue-400 hover:text-blue-600">
-                    <FaTwitter />
-                  </a>
-                  <a href="#" className="text-pink-500 hover:text-pink-700">
-                    <FaInstagram />
-                  </a>
-                  <a href="#" className="text-blue-700 hover:text-blue-900">
-                    <FaLinkedin />
+                    <FaPhone />
                   </a>
                 </div>
               </div>
@@ -193,16 +175,10 @@ export const About = () => {
                 <p className="text-gray-600">CFO Outreach</p>
                 <div className="flex mt-4 sm:justify-center  space-x-6  sm:mt-0">
                   <a href="#" className="text-blue-600 hover:text-blue-800">
-                    <FaFacebook />
+                    <FaEnvelope />
                   </a>
                   <a href="#" className="text-blue-400 hover:text-blue-600">
-                    <FaTwitter />
-                  </a>
-                  <a href="#" className="text-pink-500 hover:text-pink-700">
-                    <FaInstagram />
-                  </a>
-                  <a href="#" className="text-blue-700 hover:text-blue-900">
-                    <FaLinkedin />
+                    <FaPhone />
                   </a>
                 </div>
               </div>
@@ -219,16 +195,10 @@ export const About = () => {
                 <p className="text-gray-600">President</p>
                 <div className="flex mt-4 sm:justify-center  space-x-6  sm:mt-0">
                   <a href="#" className="text-blue-600 hover:text-blue-800">
-                    <FaFacebook />
+                    <FaEnvelope />
                   </a>
                   <a href="#" className="text-blue-400 hover:text-blue-600">
-                    <FaTwitter />
-                  </a>
-                  <a href="#" className="text-pink-500 hover:text-pink-700">
-                    <FaInstagram />
-                  </a>
-                  <a href="#" className="text-blue-700 hover:text-blue-900">
-                    <FaLinkedin />
+                    <FaPhone />
                   </a>
                 </div>
               </div>
@@ -245,16 +215,10 @@ export const About = () => {
                 <p className="text-gray-600">President</p>
                 <div className="flex mt-4 sm:justify-center  space-x-6  sm:mt-0">
                   <a href="#" className="text-blue-600 hover:text-blue-800">
-                    <FaFacebook />
+                    <FaEnvelope />
                   </a>
                   <a href="#" className="text-blue-400 hover:text-blue-600">
-                    <FaTwitter />
-                  </a>
-                  <a href="#" className="text-pink-500 hover:text-pink-700">
-                    <FaInstagram />
-                  </a>
-                  <a href="#" className="text-blue-700 hover:text-blue-900">
-                    <FaLinkedin />
+                    <FaPhone />
                   </a>
                 </div>
               </div>
@@ -271,16 +235,10 @@ export const About = () => {
                 <p className="text-gray-600">President</p>
                 <div className="flex mt-4 sm:justify-center  space-x-6  sm:mt-0">
                   <a href="#" className="text-blue-600 hover:text-blue-800">
-                    <FaFacebook />
+                    <FaEnvelope />
                   </a>
                   <a href="#" className="text-blue-400 hover:text-blue-600">
-                    <FaTwitter />
-                  </a>
-                  <a href="#" className="text-pink-500 hover:text-pink-700">
-                    <FaInstagram />
-                  </a>
-                  <a href="#" className="text-blue-700 hover:text-blue-900">
-                    <FaLinkedin />
+                    <FaPhone />
                   </a>
                 </div>
               </div>
@@ -297,20 +255,14 @@ export const About = () => {
                 <p className="text-gray-600">President</p>
                 <div className="flex mt-4 sm:justify-center  space-x-6  sm:mt-0">
                   <a href="#" className="text-blue-600 hover:text-blue-800">
-                    <FaFacebook />
+                    <FaEnvelope />
                   </a>
                   <a href="#" className="text-blue-400 hover:text-blue-600">
-                    <FaTwitter />
-                  </a>
-                  <a href="#" className="text-pink-500 hover:text-pink-700">
-                    <FaInstagram />
-                  </a>
-                  <a href="#" className="text-blue-700 hover:text-blue-900">
-                    <FaLinkedin />
+                    <FaPhone />
                   </a>
                 </div>
-              </div> */}
-                       <div className="relative w-[350px] h-[350px] sm:w-[500px] sm:h-[500px] md:w-[700px] md:h-[700px] mx-auto flex items-center justify-center">
+              </div>
+                       {/* <div className="relative w-[350px] h-[350px] left-95 sm:w-[500px] sm:h-[500px] md:w-[700px] md:h-[700px] mx-auto flex items-center justify-center">
   {members.map((member, index, arr) => {
     const angle = (index / arr.length) * 2 * Math.PI;
     const radius = arr.length > 4 
@@ -338,15 +290,12 @@ export const About = () => {
         <div className="flex flex-wrap justify-center gap-3 mt-2">
           <a href={`mailto:${member.email}`} className="text-red-600 hover:text-red-800"><FaEnvelope /></a>
           <a href={`tel:${member.phone}`} className="text-green-600 hover:text-green-800"><FaPhone /></a>
-          {/* <a href="#" className="text-blue-600 hover:text-blue-800"><FaFacebook /></a>
-          <a href="#" className="text-blue-400 hover:text-blue-600"><FaTwitter /></a>
-          <a href="#" className="text-pink-500 hover:text-pink-700"><FaInstagram /></a>
-          <a href="#" className="text-blue-700 hover:text-blue-900"><FaLinkedin /></a> */}
+
         </div>
       </div>
     );
   })}
-</div>
+</div> */}
 
 
             </div>
