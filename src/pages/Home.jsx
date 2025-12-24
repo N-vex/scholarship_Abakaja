@@ -31,27 +31,27 @@ import {
 export const Home = () => {
   const slides = [
     {
-      image: "img2.jpg",
+      image: "/assets/img2.jpg",
       title: "Fueling Dreams. Funding Futures.",
       subtitle: "Every scholar we support is a story rewritten.",
     },
     {
-      image: "photo3.jpg",
+      image: "/assets/photo3.jpg",
       title: "Opportunity Starts Here.",
       subtitle: "Where ambition meets real support.",
     },
     {
-      image: "photo4.jpg",
+      image: "/assets/photo4.jpg",
       title: "Education Without Limits.",
       subtitle: "Breaking barriers. Building leaders.",
     },
     {
-      image: "photo5.jpg",
+      image: "/assets/photo5.jpg",
       title: "Powered by Hope. Driven by Purpose.",
       subtitle: "Your journey begins the moment you believe.",
     },
     {
-      image: "photo6.jpg",
+      image: "/assets/photo6.jpg",
       title: "Becoming the Next Success Story.",
       subtitle: "Your future is worth investing in.",
     },
@@ -264,7 +264,7 @@ export const Home = () => {
           {slides.map(({ image, title, subtitle }) => (
             <SwiperSlide key={image} className="relative">
               <img
-                src={`./src/assets/${image}`}
+                src={`/assets/${image}`}
                 className="w-full h-full object-cover"
               />
 

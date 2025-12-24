@@ -18,12 +18,12 @@ export const Footer = () => {
                 >
                   <span className="flex items-center md:space-x-1">
                     <img 
-                      src="./src/assets/logo01.png" 
+                      src="/assets/logo01.png" 
                       className="h-8 md:h-10 transform md:scale-200" 
                       alt="Logo" 
                     />
                     <img 
-                      src="./src/assets/logo02.png" 
+                      src="/assets/logo02.png" 
                       className="h-8 md:h-10" 
                       alt="Logo 2"
                     />
@@ -86,13 +86,13 @@ export const Footer = () => {
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="h-5 w-5 text-accent shrink-0" />
-                <a href="tel:+15551234567" className="text-primary-foreground/80 hover:text-accent transition-colors">
-                  (555) 123-4567
+                <a href="#" className="text-primary-foreground/80 hover:text-accent transition-colors">
+                  +234 809 976 1346, +234 802 669 9163
                 </a>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="h-5 w-5 text-accent shrink-0" />
-                <a href="mailto:info@brightfuture.org" className="text-primary-foreground/80 hover:text-accent transition-colors">
+                <a href="#" className="text-primary-foreground/80 hover:text-accent transition-colors">
                   foundationmoa@gmail.com
                 </a>
               </li>

@@ -21,12 +21,12 @@ export const Navbar = () => {
             >
               <span className="flex items-center md:space-x-1">
                 <img 
-                  src="./src/assets/logo01.png" 
+                  src="/assets/logo01.png" 
                   className="h-8 md:h-10 transform md:scale-191" 
                   alt="Logo" 
                 />
                 <img 
-                  src="./src/assets/logo02.png" 
+                  src="/assets/logo02.png" 
                   className="hidden md:block h-8 md:h-10" 
                   alt="Logo 2"
                 />

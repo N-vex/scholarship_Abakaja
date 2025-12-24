@@ -84,7 +84,7 @@ export const LoginPage = () => {
       {/* LEFT PANEL */}
       <div className="login-left w-full md:w-1/2 flex flex-col justify-center">
         <img 
-          src="./src/assets/logo01.png" 
+          src="/assets/logo01.png" 
           className="w-48 h-auto mb-8"
           alt="logo" 
         />

@@ -15,7 +15,7 @@ export const About = () => {
       {/* Mission Section */}
       <section className="relative w-full min-h-screen">
         <img
-          src={"./src/assets/about7.jpg"}
+          src={"/assets/about7.jpg"}
           alt="Team collaboration"
           className="absolute inset-0 w-full h-full object-cover"
         />
