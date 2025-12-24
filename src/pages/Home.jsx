@@ -242,7 +242,7 @@ export const Home = () => {
       ([entry]) => {
         if (entry.isIntersecting) setIsVisible(true);
       },
-      { threshold: 0.2 }
+      { threshold: 0.05 }
     );
 
     if (ref.current) observer.observe(ref.current);
@@ -401,15 +401,23 @@ export const Home = () => {
 
       <section
         ref={ref}
-        className="py-6 bg-gradient-hero text-white relative overflow-hidden"
+        className="py-10 bg-gradient-hero text-white relative overflow-hidden"
       >
         {/* Background decorations */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute -top-20 -right-20 w-96 h-96 bg-gold/5 rounded-full blur-3xl" />
-          <div className="absolute -bottom-20 -left-20 w-80 h-80 bg-gold/5 rounded-full blur-3xl" />
+          <div
+            className={`absolute -top-20 -right-20 w-96 h-96 bg-gold/5 rounded-full blur-3xl transition-opacity duration-500 ${
+              isVisible ? "opacity-100" : "opacity-0"
+            }`}
+          />
+          <div
+            className={`absolute -bottom-20 -left-20 w-80 h-80 bg-gold/5 rounded-full blur-3xl transition-opacity duration-500 ${
+              isVisible ? "opacity-100" : "opacity-0"
+            }`}
+          />
         </div>
 
-        <div className="container mx-auto px-6 relative z-10">
+        <div className="container mx-auto px-10 relative z-10">
           <div className="text-center mb-16">
             <span className="inline-block px-4 py-2 bg-gold/20 text-gold font-semibold rounded-full text-sm mb-6">
               What We Stand For
@@ -454,7 +462,7 @@ export const Home = () => {
       </section>
 
       {/* ACHIEVEMENT SECTION */}
-      <section ref={ref} className="py-6 text-white bg-background">
+      <section ref={ref} className="py-10 text-white bg-background">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <span className="inline-block px-4 py-2 bg-gold/10 text-gold font-semibold rounded-full text-sm mb-6">
@@ -510,7 +518,7 @@ export const Home = () => {
           </div>
         </div>
         {/* More students under scholarship */}
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-10">
           <p className="text-center text-muted-foreground mt-12">
             And many more students are thriving under our scholarship program,
             achieving their dreams and making a difference in their communities.
@@ -526,19 +534,13 @@ export const Home = () => {
       </section>
 
       {/* FOUNDERS SECTION */}
-      <section className="py-8 text-white bg-muted/30 ">
+      <section className="py-10 text-white bg-muted/30 ">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-center mb-16">
             Meet Our Founders
           </h2>
           <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {founders.map((f, index) => {
-              const initials = f.name
-                .split(" ")
-                .map((part) => part[0])
-                .join("")
-                .toUpperCase();
-
               return (
                 <motion.div
                   key={f.name}
@@ -550,16 +552,15 @@ export const Home = () => {
                     ease: "easeOut",
                   }}
                   viewport={{ once: true }}
+                  className="h-full"
                 >
-                  <Card className="p-6 border-2 hover:border-primary transition-all hover:shadow-xl">
-                    <div className="w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden bg-primary flex items-center justify-center text-4xl text-white">
+                  <Card className="p-6 border-2 hover:border-primary transition-all hover:shadow-xl h-full">
+                    <div className="w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden">
                       <img
                         src={f.image}
                         alt={f.name}
-                        className="w-28 h-28 mx-auto mb-6 rounded-full object-cover"
+                        className="w-full h-full rounded-full object-cover"
                       />
-
-                      <span className="absolute">{initials}</span>
                     </div>
 
                     <h3 className="text-2xl font-bold text-center">{f.name}</h3>
@@ -584,7 +585,7 @@ export const Home = () => {
       </section>
 
       {/* IMPACT NUMBERS */}
-      <section className="py-8 text-white relative overflow-hidden">
+      <section className="py-10 text-white relative overflow-hidden">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-center mb-10">
             Our Impact in Numbers
@@ -608,7 +609,7 @@ export const Home = () => {
       </section>
 
       {/* CTA Section */}
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-10">
         <div className="mt-16 text-center bg-muted/50 rounded-2xl text-white bg-linear-to-br from-green-500 via-green-400 to-blue-600 p-8 border-white border-border animate-fade-in-up stagger-4">
           <h3 className="font-display text-2xl font-bold text-foreground mb-6">
             Ready to Start Your Journey?
