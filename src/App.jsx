@@ -6,7 +6,7 @@ import { Home } from "./pages/Home";
 import { Scholarship } from "./pages/Scholarship";
 import {About} from "./pages/About";
 import {Contact} from "./pages/Contact";
-import { Card } from "@/components/UI/Card";
+import { Card } from "@/components/ui/card";
 import ApplicationForm from "./pages/ApplicationForm"; 
 import ApplicationFormSubmit  from "@/components/ui/ApplicationFormSubmit";
 import Admin from "./pages/Admin"; 
