@@ -13,6 +13,7 @@ import { LoginPage } from "./pages/LoginPage";
 import ProtectedRoute from "./components/ui/ProtectedRoute";
 import { SignupPage } from "./pages/SignUpPage";
 import ScholarProfile from "./pages/ScholarProfile";
+import Donation from "./pages/Donation";
 
 export const App = () => {
   return (
@@ -27,6 +28,7 @@ export const App = () => {
             <Route path="/contact" element={<Contact />} />
             <Route path="/application-form" element={<ApplicationForm />} />
             <Route path="/login" element={<LoginPage />} />
+            <Route path="/donation" element={<Donation />} />
             <Route
               path="/admin"
               element={
