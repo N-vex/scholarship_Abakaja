@@ -2,41 +2,38 @@ import React from "react";
 import { FaEnvelope, FaPhone } from "react-icons/fa";
 
 export const About = () => {
-  
-  // const members = [ { name: " Mr. Marcel O. Agbakaja", role: "Founder", img: "/assets/about01.jpeg" }, 
-  //   { name: "Chijoke Anthony Agbakaja ", role: "Benefactor", img: "/assets/about2.jpeg" }, 
+  // const members = [ { name: " Mr. Marcel O. Agbakaja", role: "Founder", img: "/assets/about01.jpeg" },
+  //   { name: "Chijoke Anthony Agbakaja ", role: "Benefactor", img: "/assets/about2.jpeg" },
   //   { name: "Chief Christian Asubike Enwuru Ph.D. ", role: "Chairman", img: "/assets/lord3.jpg" },
   //   { name: "Ernest Asogwa", role: "CFO Outreach", img: "/assets/about9.jpg" },
-  //   { name: "Dr. (Sir.) Paulinus Chika Enwuru", role: "Member", img: "/assets/port1.jpeg" }, 
+  //   { name: "Dr. (Sir.) Paulinus Chika Enwuru", role: "Member", img: "/assets/port1.jpeg" },
   //   { name: "Ifeanyi Eze", role: "President", img: "/assets/unknown1.jpeg" }, ];
   return (
     <>
       <div className="w-full  text-white">
-      {/* Mission Section */}
-      <section className="relative w-full min-h-screen">
-        <img
-          src={"/assets/about7.jpg"}
-          alt="Team collaboration"
-          className="absolute inset-0 w-full h-full object-cover"
-        />
-        
-        <div className="absolute inset-0 bg-linear-to-t from-dark-bg via-dark-bg/60 to-transparent"></div>
+        {/* Mission Section */}
+        <section className="relative w-full min-h-screen">
+          <img
+            src={"/assets/about7.jpg"}
+            alt="Team collaboration"
+            className="absolute inset-0 w-full h-full object-cover"
+          />
 
+          <div className="absolute inset-0 bg-linear-to-t from-dark-bg via-dark-bg/60 to-transparent"></div>
 
-        <div className="relative container mx-auto px-6 py-16 h-full min-h-screen flex items-end">
-          <div className="max-w-2xl pb-12 md:pb-16 bg-dark-bg/80 backdrop-blur-sm p-8 md:p-10 rounded-lg border border-dark-border/50">
-            <h3 className="text-3xl md:text-4xl lg:text-5xl font-serif text-white mb-6">
-              The Team: Helping Millions Grow Better
-            </h3>
-            <p className="text-lg md:text-xl text-white/90 leading-relaxed font-serif">
-              Our aims are to maximize individuals' career potential, develop
-              key educational competencies, and shift the community's focus
-              towards socio-economic and value chain systems positively.
-            </p>
+          <div className="relative container mx-auto px-6 py-16 h-full min-h-screen flex items-end">
+            <div className="max-w-2xl pb-12 md:pb-16 bg-dark-bg/80 backdrop-blur-sm p-8 md:p-10 rounded-lg border border-dark-border/50">
+              <h3 className="text-3xl md:text-4xl lg:text-5xl font-serif text-white mb-6">
+                The Team: Helping Millions Grow Better
+              </h3>
+              <p className="text-lg md:text-xl text-white/90 leading-relaxed font-serif">
+                Our aims are to maximize individuals' career potential, develop
+                key educational competencies, and shift the community's focus
+                towards socio-economic and value chain systems positively.
+              </p>
+            </div>
           </div>
-        </div>
-      </section>
-    
+        </section>
 
         {/* Story Section */}
         <section className="py-10 container  mx-auto px-6">
@@ -88,7 +85,6 @@ export const About = () => {
           </div> */}
         </section>
 
-        
         {/* Our Team */}
         <section className="py-10 ">
           <div className="container mx-auto px-4">
@@ -106,9 +102,12 @@ export const About = () => {
                     className="w-32 h-32 mx-auto rounded-full mb-4 object-cover hover:scale-105 transition-transform duration-300"
                   />
                 </a>
-                <h3 className="text-xl font-semibold mb-2"> Mr. Marcel O. Agbakaja.</h3>
+                <h3 className="text-xl font-semibold mb-2">
+                  {" "}
+                  Mr. Marcel O. Agbakaja.
+                </h3>
                 <p className="text-gray-600">President</p>
-                <div className="flex mt-4 sm:justify-center  space-x-6  sm:mt-0">
+                <div className="flex flex-col items-center mt-4 space-y-4">
                   <a href="#" className="text-white hover:text-blue-800">
                     <FaEnvelope />
                   </a>
@@ -117,7 +116,7 @@ export const About = () => {
                   </a>
                 </div>
               </div>
-      
+
               <div className=" backdrop-blur-sm p-6 md:p-10 rounded-lg shadow-lg text-center">
                 <a href="#">
                   {" "}
@@ -131,14 +130,14 @@ export const About = () => {
                   Okechukwu Ndubuisi
                 </h3>
                 <p className="text-gray-600">Benefactor</p>
-                <div className="flex mt-4 sm:justify-center  space-x-6  sm:mt-0">
+                <div className="flex flex-col items-center mt-4 space-y-4">
                   <a href="#" className="text-white hover:text-blue-800">
                     <FaEnvelope />
                     <h5>tonyagba@yahoo.com</h5>
                   </a>
                   <a href="#" className="text-white hover:text-blue-600">
                     <FaPhone />
-                    <h5> +234  809 976 1346</h5>
+                    <h5> +234 809 976 1346</h5>
                   </a>
                 </div>
               </div>
@@ -152,9 +151,11 @@ export const About = () => {
                     className="w-32 h-32 mx-auto rounded-full mb-4 object-cover hover:scale-105 transition-transform duration-300"
                   />
                 </a>
-                <h3 className="text-xl font-semibold mb-2">Chief Christian Asubike Enwuru Ph.D. </h3>
+                <h3 className="text-xl font-semibold mb-2">
+                  Chief Christian Asubike Enwuru Ph.D.{" "}
+                </h3>
                 <p className="text-gray-600"> Chairman</p>
-                <div className="flex mt-4 sm:justify-center  space-x-6  sm:mt-0">
+                <div className="flex flex-col items-center mt-4 space-y-4">
                   <a href="#" className="text-white hover:text-blue-800">
                     <FaEnvelope />
                     <h4>enwuru@ymail.com</h4>
@@ -175,9 +176,11 @@ export const About = () => {
                     className="w-32 h-32 mx-auto rounded-full mb-4 object-cover hover:scale-105 transition-transform duration-300"
                   />
                 </a>
-                <h3 className="text-xl font-semibold mb-2">Dr.  Obiesie Ahuize Emmanuel </h3>
+                <h3 className="text-xl font-semibold mb-2">
+                  Dr. Obiesie Ahuize Emmanuel{" "}
+                </h3>
                 <p className="text-gray-600">Secretary</p>
-                <div className="flex mt-4 sm:justify-center  space-x-6  sm:mt-0">
+                <div className="flex flex-col items-center mt-4 space-y-4">
                   <a href="#" className="text-white hover:text-blue-800">
                     <FaEnvelope />
                     <h4>santasibito@yahoo.com </h4>
@@ -188,7 +191,7 @@ export const About = () => {
                   </a>
                 </div>
               </div>
-                            <div className="backdrop-blur-sm p-6 md:p-10 rounded-lg shadow-lg text-center ">
+              <div className="backdrop-blur-sm p-6 md:p-10 rounded-lg shadow-lg text-center ">
                 <a href="#">
                   {" "}
                   <img
@@ -197,9 +200,11 @@ export const About = () => {
                     className="w-32 h-32 mx-auto rounded-full mb-4 object-cover hover:scale-105 transition-transform duration-300"
                   />
                 </a>
-                <h3 className="text-xl font-semibold mb-2">Dr. (Sir.) Paulinus Chika Enwuru </h3>
+                <h3 className="text-xl font-semibold mb-2">
+                  Dr. (Sir.) Paulinus Chika Enwuru{" "}
+                </h3>
                 <p className="text-gray-600">Member</p>
-                <div className="flex mt-4 sm:justify-center  space-x-6  sm:mt-0">
+                <div className="flex flex-col items-center mt-4 space-y-4">
                   <a href="#" className="text-white hover:text-blue-800">
                     <FaEnvelope />
                     <h4>enwuruchikapaul1@gmail.com</h4>
@@ -210,7 +215,7 @@ export const About = () => {
                   </a>
                 </div>
               </div>
-                            <div className="backdrop-blur-sm p-6 md:p-10 rounded-lg shadow-lg text-center ">
+              <div className="backdrop-blur-sm p-6 md:p-10 rounded-lg shadow-lg text-center ">
                 <a href="#">
                   {" "}
                   <img
@@ -219,9 +224,11 @@ export const About = () => {
                     className="w-32 h-32 mx-auto rounded-full mb-4 object-cover hover:scale-105 transition-transform duration-300"
                   />
                 </a>
-                <h3 className="text-xl font-semibold mb-2">Rev. Fr. Dr. Paschal Chukwuemeka Amagba </h3>
+                <h3 className="text-xl font-semibold mb-2">
+                  Rev. Fr. Dr. Paschal Chukwuemeka Amagba{" "}
+                </h3>
                 <p className="text-gray-600">Member</p>
-                <div className="flex mt-4 sm:justify-center  space-x-6  sm:mt-0">
+                <div className="flex flex-col items-center mt-4 space-y-4">
                   <a href="#" className="text-white hover:text-blue-800">
                     <FaEnvelope />
                     <h4>hosana2505@gmail.com </h4>
@@ -232,7 +239,7 @@ export const About = () => {
                   </a>
                 </div>
               </div>
-                            <div className="backdrop-blur-sm p-6 md:p-10 rounded-lg shadow-lg text-center ">
+              <div className="backdrop-blur-sm p-6 md:p-10 rounded-lg shadow-lg text-center ">
                 <a href="#">
                   {" "}
                   <img
@@ -241,9 +248,11 @@ export const About = () => {
                     className="w-32 h-32 mx-auto rounded-full mb-4 object-cover hover:scale-105 transition-transform duration-300"
                   />
                 </a>
-                <h3 className="text-xl font-semibold mb-2">Oliver Chimmamkpa Obiukwu </h3>
+                <h3 className="text-xl font-semibold mb-2">
+                  Oliver Chimmamkpa Obiukwu{" "}
+                </h3>
                 <p className="text-gray-600">Member</p>
-                <div className="flex mt-4 sm:justify-center  space-x-6  sm:mt-0">
+                <div className="flex flex-col items-center mt-4 space-y-4">
                   <a href="#" className="text-white hover:text-blue-800">
                     <FaEnvelope />
                     <h4>obiukwuoliver@yahoo.com</h4>
@@ -254,7 +263,7 @@ export const About = () => {
                   </a>
                 </div>
               </div>
-                            <div className="backdrop-blur-sm p-6 md:p-10 rounded-lg shadow-lg text-center">
+              <div className="backdrop-blur-sm p-6 md:p-10 rounded-lg shadow-lg text-center">
                 <a href="#">
                   {" "}
                   <img
@@ -263,9 +272,11 @@ export const About = () => {
                     className="w-32 h-32 mx-auto rounded-full mb-4 object-cover hover:scale-105 transition-transform duration-300"
                   />
                 </a>
-                <h3 className="text-xl font-semibold mb-2">Barr. Wisdom Okezie Igweh </h3>
+                <h3 className="text-xl font-semibold mb-2">
+                  Barr. Wisdom Okezie Igweh{" "}
+                </h3>
                 <p className="text-gray-600">Member</p>
-                <div className="flex mt-4 sm:justify-center  space-x-6  sm:mt-0">
+                <div className="flex flex-col items-center mt-4 space-y-4">
                   <a href="#" className="text-white hover:text-blue-800">
                     <FaEnvelope />
                     <h4> pnigwe@yahoo.com</h4>
@@ -276,7 +287,7 @@ export const About = () => {
                   </a>
                 </div>
               </div>
-                       {/* <div className="relative w-[350px] h-[350px] left-95 sm:w-[500px] sm:h-[500px] md:w-[700px] md:h-[700px] mx-auto flex items-center justify-center">
+              {/* <div className="relative w-[350px] h-[350px] left-95 sm:w-[500px] sm:h-[500px] md:w-[700px] md:h-[700px] mx-auto flex items-center justify-center">
   {members.map((member, index, arr) => {
     const angle = (index / arr.length) * 2 * Math.PI;
     const radius = arr.length > 4 
@@ -301,7 +312,7 @@ export const About = () => {
         />
         <h3 className="text-sm sm:text-base md:text-lg font-semibold">{member.name}</h3>
         <p className="text-gray-600 text-xs sm:text-sm">{member.role}</p>
-        <div className="flex flex-wrap justify-center gap-3 mt-2">
+        <div className="flex flex-col items-center gap-2 mt-2">
           <a href={`mailto:${member.email}`} className="text-red-600 hover:text-red-800"><FaEnvelope /></a>
           <a href={`tel:${member.phone}`} className="text-green-600 hover:text-green-800"><FaPhone /></a>
 
@@ -310,8 +321,6 @@ export const About = () => {
     );
   })}
 </div> */}
-
-
             </div>
           </div>
         </section>
