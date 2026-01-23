@@ -47,15 +47,15 @@ export const About = () => {
               his Father Mr. Marcel O. Agbakaja. Mr. M.O Agbakaja served the
               Nation as an erudite teacher in various capacities and became a
               motivator par excellence that earned him the popular pet name
-              “Mii-sa” (Onye-nkuzi). In his efforts to improve the
+              “Mii-sa” (Onye-nkuzi). <br /> In his efforts to improve the
               society/community, ‘Mii-sa’, together with his cohort severally
               founded Urualla Graduate Association (UGA), Urualla Development
               Auction Committee (UDAC) (which gave birth to Comprehensive
               Secondary school, Urualla), and the Cooperative Association in
-              Urualla, among many others. It is against this backdrop that his
+              Urualla, among many others. <br /> It is against this backdrop that his
               son (Ikenga) decided to honour him now that he is alive, hale, and
               hearty. The Educational foundation is to be enhanced to be
-              self-sustaining through “one for two” principle. This implies that
+              self-sustaining through “one for two” principle. <br /> This implies that
               one successful beneficiary shall surely produce one person more
               for the Foundation, thereby making it a sustainable Organization
               that shall out-live the founders. With the same ideals, we promote

@@ -209,7 +209,7 @@ export const Scholarship = ({ scholarships = sampleScholarships }) => {
                   value={query}
                   onChange={(e) => setQuery(e.target.value)}
                   placeholder="Search by title or keyword"
-                  className="w-64 sm:w-80 px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm bg-gray-50 dark:bg-gray-800 border-gray-200 dark:border-gray-700 text-gray-900 dark:text-gray-100"
+                  className="w-80 px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm bg-gray-50 dark:bg-gray-800 border-gray-200 dark:border-gray-700 text-gray-900 dark:text-gray-100"
                 />
               </div>
               <div className="hidden sm:flex gap-2 items-center">
@@ -266,8 +266,8 @@ export const Scholarship = ({ scholarships = sampleScholarships }) => {
               <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
                 <p className="mb-3 text-body">
                   Law, medicine/paramedical courses, engineering (Mechanical,
-                  civil, electrical, structural), Aviation engineering, marine
-                  engineering Computer sciences, mathematics, Project
+                  civil, electrical, structural), Aviation engineering, Marine
+                  engineering, Computer sciences, mathematics, Project
                   Management, statistics, metrological engineering, Information
                   Technology, Accountancy, health management accountancy.
                 </p>

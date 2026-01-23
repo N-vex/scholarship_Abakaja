@@ -67,16 +67,16 @@ const Donate = () => {
                 <h3 className="text-xl font-semibold mb-4">Donation Account Details</h3>
                 <ul className="space-y-2 text-gray-700">
                   <li>
-                    <strong>Bank Name:</strong> Polaris Bank
+                   Bank Name:<strong> Polaris Bank</strong>
                   </li>
                   <li>
-                    <strong>Account Name:</strong>M.O. Agbakaja Educational Foundation (MAEF)
+                    Account Name: <strong> M.O. Agbakaja Educational Foundation (MAEF)</strong>
                   </li>
                   <li>
-                    <strong>Account Number:</strong> 1771919561
+                    Account Number: <strong> 1771919561</strong>
                   </li>
                   <li>
-                    <strong>Account Type:</strong> Savings
+                    Account Type: <strong> Savings</strong> 
                   </li>
                 </ul>
 

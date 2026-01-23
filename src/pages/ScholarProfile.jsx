@@ -440,7 +440,7 @@ const ScholarProfile = () => {
                   <p className=" mb-6">
                     Hello! I'm Uzomba Peter Ogemdi, 
                     A Biochemistry graduate from the Federal University of Technology Owerri.
-                    I thank the M.O Abakaja Education for investing in human capital development through education.
+                    I thank the M.O Agbakaja Education for investing in human capital development through education.
                     Feel free to reach out to me for any collaborations or just to say hi!
                   </p>
 

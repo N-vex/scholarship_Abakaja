@@ -23,7 +23,7 @@ export const Footer = () => {
                       alt="Logo" 
                     />
                     <img 
-                      src="/assets/logo02.png" 
+                      src="/assets/Logo33.png" 
                       className="h-8 md:h-10" 
                       alt="Logo 2"
                     />
@@ -31,7 +31,7 @@ export const Footer = () => {
                 </a>
             </div>
             <p className="text-primary-foreground/80 mb-6">
-              Empowering dreams through education since 2020.
+              Empowering dreams through education.
             </p>
             <div className="flex gap-3">
               <a href="#" className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-accent transition-colors">
@@ -106,7 +106,7 @@ export const Footer = () => {
         <div className="container mx-auto px-4 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-primary-foreground/60 text-sm">
-              © 2026 M.O. Abakaja Educational Foundation Scholarships. All rights reserved.
+              © 2026 M.O. Agbakaja Educational Foundation Scholarships. All rights reserved.
             </p>
             <div className="flex gap-6 text-sm">
               <a href="#" className="text-primary-foreground/60 hover:text-accent transition-colors">Privacy Policy</a>

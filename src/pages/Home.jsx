@@ -106,7 +106,7 @@ export const Home = () => {
     },
     {
       name: "Chief Chijoke Agbakaja",
-      role: "Co-Founder & Director of Operations",
+      role: "Benefactor & Director of Operations",
       bio: "First-gen scholar dedicated to creating pathways for underrepresented students.",
       education: "MBA, Stanford University",
       image: about2,
@@ -123,25 +123,25 @@ export const Home = () => {
   const testimonials = [
     {
       quote:
-        "The Horizon Scholarship didn't just fund my education, it gave me a community of mentors and peers who believed in me when I couldn't believe in myself.",
+        "M.O Agbakaja Educational Foundation Scholarship didn't just fund my education, it gave me a community of mentors and peers who believed in me when I couldn't believe in myself.",
       name: "Ejezie Chidimma Ann",
-      role: "Class of 2019",
+      role: "Class of 2019, Social Works",
       image: "/assets/port5.jpeg",
     },
     {
       quote:
         "As a first-generation college student, I had no roadmap. This foundation provided not just funding, but guidance that changed the trajectory of my life.",
       name: "Uzomba Peter Ogemdi",
-      role: "Class of 2021",
+      role: "Class of 2021, Biochemistry",
       image: "/assets/port3.jpeg",
     },
     {
       quote:
         "The mentorship program connected me with industry leaders who helped me navigate my career path. I'm forever grateful for this opportunity.",
-      name: "Aisha Johnson",
-      role: "Class of 2020, Healthcare Administrator",
+      name: "Ewulu Tobechukwu Anthony",
+      role: "Class of 2020, Economics",
       image:
-        "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=150&h=150&fit=crop&crop=face",
+        "/assets/port11.jpeg",
     },
   ];
 
@@ -296,61 +296,6 @@ export const Home = () => {
           <ChevronRight className="w-5 h-5" />
         </button>
       </div>
-      <section className="py-14 text-white bg-background" id="how-it-works">
-        <div className="container mx-auto px-4">
-          <div className="text-center max-w-3xl mx-auto mb-16 animate-fade-in-up">
-            <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-6">
-              How It Works
-            </h2>
-            <p className="text-lg text-muted-foreground">
-              A straightforward process designed to get you funded quickly and
-              efficiently
-            </p>
-          </div>
-
-          <div className="max-w-5xl mx-auto">
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {steps.map((step, index) => {
-                const Icon = step.icon;
-                return (
-                  <div
-                    key={index}
-                    className="relative animate-fade-in-up group"
-                    style={{ animationDelay: `${index * 0.1}s` }}
-                  >
-                    {/* Connector Line (hidden on last item and mobile) */}
-                    {index < steps.length - 1 && (
-                      <div className="hidden lg:block absolute top-12 left-full w-full h-0.5 bg-linear-to-r from-primary/30 to-accent/30 -z-10" />
-                    )}
-
-                    <div className="text-center">
-                      {/* Step Number */}
-                      <div className="inline-flex items-center bg-linear-to-br from-green-500 via-green-400 to-blue-600 justify-center w-8 h-8 rounded-full bg-muted text-muted-foreground font-bold text-sm mb-4">
-                        {index + 1}
-                      </div>
-
-                      {/* Icon */}
-                      <div
-                        className={`w-20 h-20 mx-auto rounded-2xl ${step.bgColor} flex items-center justify-center mb-6 transition-all duration-300 group-hover:scale-110 group-hover: bg-emerald-300`}
-                      >
-                        <Icon className={`h-10 w-10 ${step.color}`} />
-                      </div>
-
-                      {/* Content */}
-                      <h3 className="font-display text-xl font-bold text-foreground mb-3">
-                        {step.title}
-                      </h3>
-                      <p className="text-muted-foreground leading-relaxed">
-                        {step.description}
-                      </p>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* MISSION / VALUES / VISION */}
       <section id="values" className="py-10 ">
@@ -533,6 +478,61 @@ export const Home = () => {
         </div>
       </section>
 
+      <section className="py-14 text-white bg-background" id="how-it-works">
+        <div className="container mx-auto px-4">
+          <div className="text-center max-w-3xl mx-auto mb-16 animate-fade-in-up">
+            <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-6">
+              How It Works
+            </h2>
+            <p className="text-lg text-muted-foreground">
+              A straightforward process designed to get you funded quickly and
+              efficiently
+            </p>
+          </div>
+
+          <div className="max-w-5xl mx-auto">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {steps.map((step, index) => {
+                const Icon = step.icon;
+                return (
+                  <div
+                    key={index}
+                    className="relative animate-fade-in-up group"
+                    style={{ animationDelay: `${index * 0.1}s` }}
+                  >
+                    {/* Connector Line (hidden on last item and mobile) */}
+                    {index < steps.length - 1 && (
+                      <div className="hidden lg:block absolute top-12 left-full w-full h-0.5 bg-linear-to-r from-primary/30 to-accent/30 -z-10" />
+                    )}
+
+                    <div className="text-center">
+                      {/* Step Number */}
+                      <div className="inline-flex items-center bg-linear-to-br from-green-500 via-green-400 to-blue-600 justify-center w-8 h-8 rounded-full bg-muted text-muted-foreground font-bold text-sm mb-4">
+                        {index + 1}
+                      </div>
+
+                      {/* Icon */}
+                      <div
+                        className={`w-20 h-20 mx-auto rounded-2xl ${step.bgColor} flex items-center justify-center mb-6 transition-all duration-300 group-hover:scale-110 group-hover: bg-emerald-300`}
+                      >
+                        <Icon className={`h-10 w-10 ${step.color}`} />
+                      </div>
+
+                      {/* Content */}
+                      <h3 className="font-display text-xl font-bold text-foreground mb-3">
+                        {step.title}
+                      </h3>
+                      <p className="text-muted-foreground leading-relaxed">
+                        {step.description}
+                      </p>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      </section>
       {/* FOUNDERS SECTION */}
       <section className="py-10 text-white bg-muted/30 ">
         <div className="container mx-auto px-4">
