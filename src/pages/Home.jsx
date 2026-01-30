@@ -99,23 +99,23 @@ export const Home = () => {
   const founders = [
     {
       name: " Mr. Marcel O. Agbakaja",
-      role: "Founder & Executive Director",
-      bio: "Former university dean with 20+ years in education. Passionate about breaking down barriers.",
-      education: "PhD in Education Policy, Harvard University",
+      role: "##############",
+      bio: "lorem ipsum dolor sit amet, consectetur adipiscing elit",
+      education: "lorem ipsum dolor sit amet, consectetur adipiscing elit",
       image: about01,
     },
     {
       name: "Chief Chijoke Agbakaja",
-      role: "Benefactor & Director of Operations",
-      bio: "First-gen scholar dedicated to creating pathways for underrepresented students.",
-      education: "MBA, Stanford University",
+      role: "Benefactor & Founder of Operations",
+      bio: "lorem ipsum dolor sit amet, consectetur adipiscing elit ",
+      education: "lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       image: about2,
     },
     {
       name: "Dr. Aisha Patel",
-      role: "Co-Founder & Head of Partnerships",
-      bio: "Leader in nonprofit fundraising and educational equity.",
-      education: "PhD in Social Entrepreneurship, Oxford University",
+      role: "Secretary BOT of Operations",
+      bio: "lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      education: "lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       image: about9,
     },
   ];
@@ -140,8 +140,7 @@ export const Home = () => {
         "The mentorship program connected me with industry leaders who helped me navigate my career path. I'm forever grateful for this opportunity.",
       name: "Ewulu Tobechukwu Anthony",
       role: "Class of 2020, Economics",
-      image:
-        "/assets/port11.jpeg",
+      image: "/assets/port11.jpeg",
     },
   ];
 
@@ -242,7 +241,7 @@ export const Home = () => {
       ([entry]) => {
         if (entry.isIntersecting) setIsVisible(true);
       },
-      { threshold: 0.05 }
+      { threshold: 0.05 },
     );
 
     if (ref.current) observer.observe(ref.current);
@@ -306,38 +305,38 @@ export const Home = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Mission */}
-            <div className="p-6 bg-white dark:bg-black rounded-2xl shadow-md">
-              <div className="w-28 h-28 mx-auto flex items-center justify-center rounded-full bg-blue-600 text-white text-xl font-semibold mb-4">
+            <div className="p-6 rounded-2xl shadow-md" style={{ backgroundColor: "#A7B75D" }}>
+              <div className="w-28 h-28 mx-auto flex items-center justify-center rounded-full text-white text-xl font-semibold mb-4">
                 Mission
               </div>
               <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                The Mission is to eradicate ignorance and poverty through career
+                <strong>The Mission is to eradicate ignorance and poverty through career
                 revolution and to create community partnerships to fulfill
-                educational dreams in Urualla and beyond.
+                educational dreams in Urualla and beyond.</strong>
               </p>
             </div>
 
             {/* Values */}
-            <div className="p-6 bg-white dark:bg-black rounded-2xl shadow-md">
-              <div className="w-28 h-28 mx-auto flex items-center justify-center rounded-full bg-green-600 text-white text-xl font-semibold mb-4">
+          <div className="p-6 rounded-2xl shadow-md" style={{ backgroundColor: "#44493A" }}>
+              <div className="w-28 h-28 mx-auto flex items-center justify-center rounded-full  text-white text-xl font-semibold mb-4">
                 Goal
               </div>
               <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                To create and promote a world-class educational scholarship
+                <strong>To create and promote a world-class educational scholarship
                 programme for our people and foster mutually beneficial
-                partnerships.
+                partnerships.</strong>
               </p>
             </div>
 
             {/* Vision */}
-            <div className="p-6 bg-white dark:bg-black rounded-2xl shadow-md">
-              <div className="w-28 h-28 mx-auto flex items-center justify-center rounded-full bg-yellow-500 text-white text-xl font-semibold mb-4">
+        <div className="p-6 rounded-2xl shadow-md" style={{ backgroundColor: "#000000" }}>
+              <div className="w-28 h-28 mx-auto flex items-center justify-center rounded-full  text-white text-xl font-semibold mb-4">
                 Vision
               </div>
               <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                To bridge the gaps between opportunities toexcel, and to
+                <strong>To bridge the gaps between opportunities to excel, and to
                 transform the community into a world-class society, where
-                career\vocation is supreme
+                career\vocation is supreme.</strong>
               </p>
             </div>
           </div>

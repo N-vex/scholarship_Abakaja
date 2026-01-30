@@ -129,7 +129,7 @@ export const About = () => {
                 <h3 className="text-xl font-semibold mb-2">
                   Okechukwu Ndubuisi
                 </h3>
-                <p className="text-gray-600">Benefactor</p>
+                <p className="text-gray-600">Founder/Benefactor</p>
                 <div className="flex flex-col items-center mt-4 space-y-4">
                   <a href="#" className="text-white hover:text-blue-800">
                     <FaEnvelope />
@@ -152,9 +152,9 @@ export const About = () => {
                   />
                 </a>
                 <h3 className="text-xl font-semibold mb-2">
-                  Chief Christian Asubike Enwuru Ph.D.{" "}
+                  Chief DR. Christian Azubike Enwuru Ph.D.{" "}
                 </h3>
-                <p className="text-gray-600"> Chairman</p>
+                <p className="text-gray-600"> Chairman (BOT)</p>
                 <div className="flex flex-col items-center mt-4 space-y-4">
                   <a href="#" className="text-white hover:text-blue-800">
                     <FaEnvelope />
@@ -179,7 +179,7 @@ export const About = () => {
                 <h3 className="text-xl font-semibold mb-2">
                   Dr. Obiesie Ahuize Emmanuel{" "}
                 </h3>
-                <p className="text-gray-600">Secretary</p>
+                <p className="text-gray-600">Secretary (BOT)</p>
                 <div className="flex flex-col items-center mt-4 space-y-4">
                   <a href="#" className="text-white hover:text-blue-800">
                     <FaEnvelope />
