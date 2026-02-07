@@ -177,7 +177,7 @@ export const Scholarship = ({ scholarships = sampleScholarships }) => {
         {/* Right Image Section */}
         <div className="md:w-1/2 flex justify-center">
           <img
-            src="/assets/img1.jpg"
+            src="/assets/school.jpg"
             alt="Person using laptop"
             className="max-w-full h-auto rounded-lg shadow-lg"
           />

@@ -31,7 +31,7 @@ import {
 export const Home = () => {
   const slides = [
     {
-      image: "/assets/img2.jpg",
+      image: "/assets/main.png",
       title: "Fueling Dreams. Funding Futures.",
       subtitle: "Every scholar we support is a story rewritten.",
     },
@@ -147,7 +147,7 @@ export const Home = () => {
   const stats = [
     {
       icon: Users,
-      value: 5000,
+      value: 100,
       label: "Students Funded",
       prefix: "",
       suffix: "+",
@@ -156,7 +156,7 @@ export const Home = () => {
     },
     {
       icon: DollarSign,
-      value: 10,
+      value: 1.5,
       label: "Million in Scholarships",
       prefix: "$",
       suffix: "M+",
@@ -174,7 +174,7 @@ export const Home = () => {
     },
     {
       icon: Award,
-      value: 150,
+      value: 30,
       label: "Partner Universities",
       prefix: "",
       suffix: "+",
@@ -262,7 +262,10 @@ export const Home = () => {
         >
           {slides.map(({ image, title, subtitle }) => (
             <SwiperSlide key={image} className="relative">
-              <img src={image} className="w-full h-full object-cover" />
+              <img
+                src={image}
+                className={`w-full h-full ${image.includes("main.png") ? "object-contain" : "object-cover"}`}
+              />
 
               <div className="absolute inset-0 flex items-end justify-start p-6">
                 <div className="bg-black/50 p-8 rounded-2xl backdrop-blur-sm text-left max-w-2xl">
@@ -305,38 +308,53 @@ export const Home = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Mission */}
-            <div className="p-6 rounded-2xl shadow-md" style={{ backgroundColor: "#A7B75D" }}>
+            <div
+              className="p-6 rounded-2xl shadow-md"
+              style={{ backgroundColor: "#A7B75D" }}
+            >
               <div className="w-28 h-28 mx-auto flex items-center justify-center rounded-full text-white text-xl font-semibold mb-4">
                 Mission
               </div>
               <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                <strong>The Mission is to eradicate ignorance and poverty through career
-                revolution and to create community partnerships to fulfill
-                educational dreams in Urualla and beyond.</strong>
+                <strong>
+                  The Mission is to eradicate ignorance and poverty through
+                  career revolution and to create community partnerships to
+                  fulfill educational dreams in Urualla and beyond.
+                </strong>
               </p>
             </div>
 
             {/* Values */}
-          <div className="p-6 rounded-2xl shadow-md" style={{ backgroundColor: "#44493A" }}>
+            <div
+              className="p-6 rounded-2xl shadow-md"
+              style={{ backgroundColor: "#44493A" }}
+            >
               <div className="w-28 h-28 mx-auto flex items-center justify-center rounded-full  text-white text-xl font-semibold mb-4">
                 Goal
               </div>
               <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                <strong>To create and promote a world-class educational scholarship
-                programme for our people and foster mutually beneficial
-                partnerships.</strong>
+                <strong>
+                  To create and promote a world-class educational scholarship
+                  programme for our people and foster mutually beneficial
+                  partnerships.
+                </strong>
               </p>
             </div>
 
             {/* Vision */}
-        <div className="p-6 rounded-2xl shadow-md" style={{ backgroundColor: "#000000" }}>
+            <div
+              className="p-6 rounded-2xl shadow-md"
+              style={{ backgroundColor: "#000000" }}
+            >
               <div className="w-28 h-28 mx-auto flex items-center justify-center rounded-full  text-white text-xl font-semibold mb-4">
                 Vision
               </div>
               <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                <strong>To bridge the gaps between opportunities to excel, and to
-                transform the community into a world-class society, where
-                career\vocation is supreme.</strong>
+                <strong>
+                  To bridge the gaps between opportunities to excel, and to
+                  transform the community into a world-class society, where
+                  career\vocation is supreme.
+                </strong>
               </p>
             </div>
           </div>
@@ -602,7 +620,7 @@ export const Home = () => {
               “This scholarship didn’t just pay for my education — it changed my
               life.”
             </p>
-            <div className="mt-4 font-semibold">Jessica Martinez</div>
+            <div className="mt-4 font-semibold"> Ndubuaku Chioma </div>
           </div>
         </div>
       </section>

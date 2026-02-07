@@ -23,13 +23,12 @@ export const About = () => {
 
           <div className="relative container mx-auto px-6 py-16 h-full min-h-screen flex items-end">
             <div className="max-w-2xl pb-12 md:pb-16 bg-dark-bg/80 backdrop-blur-sm p-8 md:p-10 rounded-lg border border-dark-border/50">
-              <h3 className="text-3xl md:text-4xl lg:text-5xl font-serif text-white mb-6">
+              <h3 className="text-2xl md:text-4xl lg:text-5xl font-serif text-white mb-6">
                 The Team: Helping Millions Grow Better
               </h3>
-              <p className="text-lg md:text-xl text-white/90 leading-relaxed font-serif">
-                Our aims are to maximize individuals' career potential, develop
-                key educational competencies, and shift the community's focus
-                towards socio-economic and value chain systems positively.
+              <p className="text-sm md:text-base text-white/90 leading-relaxed font-serif">
+                Empowering individuals. Building excellence. Creating positive
+                community change.
               </p>
             </div>
           </div>
@@ -52,16 +51,16 @@ export const About = () => {
               founded Urualla Graduate Association (UGA), Urualla Development
               Auction Committee (UDAC) (which gave birth to Comprehensive
               Secondary school, Urualla), and the Cooperative Association in
-              Urualla, among many others. <br /> It is against this backdrop that his
-              son (Ikenga) decided to honour him now that he is alive, hale, and
-              hearty. The Educational foundation is to be enhanced to be
-              self-sustaining through “one for two” principle. <br /> This implies that
-              one successful beneficiary shall surely produce one person more
-              for the Foundation, thereby making it a sustainable Organization
-              that shall out-live the founders. With the same ideals, we promote
-              the value of sound professionalism and demonstrate that “education
-              is a good business” and is a core component of a healthy
-              Community.
+              Urualla, among many others. <br /> It is against this backdrop
+              that his son (Ikenga) decided to honour him now that he is alive,
+              hale, and hearty. The Educational foundation is to be enhanced to
+              be self-sustaining through “one for two” principle. <br /> This
+              implies that one successful beneficiary shall surely produce one
+              person more for the Foundation, thereby making it a sustainable
+              Organization that shall out-live the founders. With the same
+              ideals, we promote the value of sound professionalism and
+              demonstrate that “education is a good business” and is a core
+              component of a healthy Community.
             </p>
           </div>
 
@@ -106,7 +105,7 @@ export const About = () => {
                   {" "}
                   Mr. Marcel O. Agbakaja.
                 </h3>
-                <p className="text-gray-600">President</p>
+                <p className="text-gray-600">Honourary</p>
                 <div className="flex flex-col items-center mt-4 space-y-4">
                   <a href="#" className="text-white hover:text-blue-800">
                     <FaEnvelope />

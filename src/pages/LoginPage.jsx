@@ -17,14 +17,14 @@ export const LoginPage = () => {
     };
 
 
-  const handleGithubLogin = async () => {
-    const { error } = await supabase.auth.signInWithOAuth({
-      provider: "github",
-    });
-    if (error) {
-      console.error("GitHub login error:", error.message);
-    }
-  };
+  // const handleGithubLogin = async () => {
+  //   const { error } = await supabase.auth.signInWithOAuth({
+  //     provider: "github",
+  //   });
+  //   if (error) {
+  //     console.error("GitHub login error:", error.message);
+  //   }
+  // };
 
   const handleEmailLogin = async (e) => {
     e.preventDefault();
@@ -133,12 +133,12 @@ export const LoginPage = () => {
             Google
           </button>
 
-          <button 
+          {/* <button 
             onClick={handleGithubLogin} 
             className="oauth-btn flex-1 border py-2 rounded flex items-center justify-center gap-2 hover:bg-gray-50 transition-colors"
           >
             GitHub
-          </button>
+          </button> */}
         </div>
       </div>
 
