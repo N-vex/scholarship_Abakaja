@@ -105,7 +105,7 @@ export const About = () => {
                   {" "}
                   Mr. Marcel O. Agbakaja.
                 </h3>
-                <p className="text-gray-600">Honourary</p>
+                <p className="text-gray-600">Honorary</p>
                 <div className="flex flex-col items-center mt-4 space-y-4">
                   <a href="#" className="text-white hover:text-blue-800">
                     <FaEnvelope />
