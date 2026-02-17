@@ -1,5 +1,5 @@
 import React from "react";
-import { FaEnvelope, FaPhone } from "react-icons/fa";
+import { FaEnvelope, FaFacebook } from "react-icons/fa";
 
 export const About = () => {
   // const members = [ { name: " Mr. Marcel O. Agbakaja", role: "Founder", img: "/assets/about01.jpeg" },
@@ -107,11 +107,11 @@ export const About = () => {
                 </h3>
                 <p className="text-gray-600">Honorary</p>
                 <div className="flex flex-col items-center mt-4 space-y-4">
-                  <a href="#" className="text-white hover:text-blue-800">
+                  <a  className="text-white hover:text-blue-800">
                     <FaEnvelope />
                   </a>
-                  <a href="#" className="text-white hover:text-blue-600">
-                    <FaPhone />
+                  <a className="text-white hover:text-blue-600">
+                    <FaFacebook />
                   </a>
                 </div>
               </div>
@@ -130,13 +130,13 @@ export const About = () => {
                 </h3>
                 <p className="text-gray-600">Founder/Benefactor</p>
                 <div className="flex flex-col items-center mt-4 space-y-4">
-                  <a href="#" className="text-white hover:text-blue-800">
+                  <a className="text-white hover:text-blue-800">
                     <FaEnvelope />
                     <h5>tonyagba@yahoo.com</h5>
                   </a>
-                  <a href="#" className="text-white hover:text-blue-600">
-                    <FaPhone />
-                    <h5> +234 809 976 1346</h5>
+                  <a  className="text-white hover:text-blue-600">
+                    <FaFacebook />
+                    <h5> </h5>
                   </a>
                 </div>
               </div>
@@ -155,13 +155,13 @@ export const About = () => {
                 </h3>
                 <p className="text-gray-600"> Chairman (BOT)</p>
                 <div className="flex flex-col items-center mt-4 space-y-4">
-                  <a href="#" className="text-white hover:text-blue-800">
+                  <a className="text-white hover:text-blue-800">
                     <FaEnvelope />
                     <h4>enwuru@ymail.com</h4>
                   </a>
-                  <a href="#" className="text-white hover:text-blue-600">
-                    <FaPhone />
-                    <h4>+234 803 382 4412</h4>
+                  <a className="text-white hover:text-blue-600">
+                    <FaFacebook />
+                    <h4></h4>
                   </a>
                 </div>
               </div>
@@ -180,13 +180,13 @@ export const About = () => {
                 </h3>
                 <p className="text-gray-600">Secretary (BOT)</p>
                 <div className="flex flex-col items-center mt-4 space-y-4">
-                  <a href="#" className="text-white hover:text-blue-800">
+                  <a className="text-white hover:text-blue-800">
                     <FaEnvelope />
                     <h4>santasibito@yahoo.com </h4>
                   </a>
-                  <a href="#" className="text-white hover:text-blue-600">
-                    <FaPhone />
-                    <h4>+234 803 401 2598</h4>
+                  <a className="text-white hover:text-blue-600">
+                    <FaFacebook />
+                    <h4></h4>
                   </a>
                 </div>
               </div>
@@ -204,13 +204,13 @@ export const About = () => {
                 </h3>
                 <p className="text-gray-600">Member</p>
                 <div className="flex flex-col items-center mt-4 space-y-4">
-                  <a href="#" className="text-white hover:text-blue-800">
+                  <a className="text-white hover:text-blue-800">
                     <FaEnvelope />
                     <h4>enwuruchikapaul1@gmail.com</h4>
                   </a>
-                  <a href="#" className="text-white hover:text-blue-600">
-                    <FaPhone />
-                    <h4>+234 806 395 5871</h4>
+                  <a  className="text-white hover:text-blue-600">
+                    <FaFacebook />
+                    <h4></h4>
                   </a>
                 </div>
               </div>
@@ -228,13 +228,13 @@ export const About = () => {
                 </h3>
                 <p className="text-gray-600">Member</p>
                 <div className="flex flex-col items-center mt-4 space-y-4">
-                  <a href="#" className="text-white hover:text-blue-800">
+                  <a className="text-white hover:text-blue-800">
                     <FaEnvelope />
                     <h4>hosana2505@gmail.com </h4>
                   </a>
-                  <a href="#" className="text-white hover:text-blue-600">
-                    <FaPhone />
-                    <h4>+234 908 275 0728</h4>
+                  <a  className="text-white hover:text-blue-600">
+                    <FaFacebook />
+                    <h4></h4>
                   </a>
                 </div>
               </div>
@@ -252,13 +252,13 @@ export const About = () => {
                 </h3>
                 <p className="text-gray-600">Member</p>
                 <div className="flex flex-col items-center mt-4 space-y-4">
-                  <a href="#" className="text-white hover:text-blue-800">
+                  <a className="text-white hover:text-blue-800">
                     <FaEnvelope />
                     <h4>obiukwuoliver@yahoo.com</h4>
                   </a>
-                  <a href="#" className="text-white hover:text-blue-600">
-                    <FaPhone />
-                    <h4>+234 803 508 1449</h4>
+                  <a  className="text-white hover:text-blue-600">
+                    <FaFacebook />
+                    <h4></h4>
                   </a>
                 </div>
               </div>
@@ -276,13 +276,13 @@ export const About = () => {
                 </h3>
                 <p className="text-gray-600">Member</p>
                 <div className="flex flex-col items-center mt-4 space-y-4">
-                  <a href="#" className="text-white hover:text-blue-800">
+                  <a className="text-white hover:text-blue-800">
                     <FaEnvelope />
                     <h4> pnigwe@yahoo.com</h4>
                   </a>
-                  <a href="#" className="text-white hover:text-blue-600">
-                    <FaPhone />
-                    <h4>+234 803 382 7589</h4>
+                  <a className="text-white hover:text-blue-600">
+                    <FaFacebook />
+                    <h4></h4>
                   </a>
                 </div>
               </div>

@@ -7,6 +7,7 @@ import {
   Handshake,
   Pencil,
   Users,
+  Search,
 } from "lucide-react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
@@ -80,7 +81,7 @@ export const Scholarship = ({ scholarships = sampleScholarships }) => {
 
   return (
     <>
-      <section className="flex flex-col md:flex-row items-center justify-between text-white  py-20 px-4 sm:py-20 sm:px-6 lg:px-8">
+      <section className="flex flex-col md:flex-row items-center justify-between text-white  py-24 px-4 sm:py-20 sm:px-6 lg:px-8">
         {/* Left Text Section */}
         <div className="md:w-1/2 mb-10 text-center md:mb-0">
           <h1 className="text-4xl md:text-5xl  font-bold leading-tight mb-6">
@@ -175,11 +176,11 @@ export const Scholarship = ({ scholarships = sampleScholarships }) => {
           </div>
         </div>
         {/* Right Image Section */}
-        <div className="md:w-1/2 flex justify-center">
+        <div className="md:w-1/2 py-12 flex justify-center">
           <img
-            src="/assets/school.jpg"
+            src="/assets/class.jpg"
             alt="Person using laptop"
-            className="max-w-full h-auto rounded-lg shadow-lg"
+            className="w-full max-w-md h-64 md:h-96 object-cover rounded-lg shadow-lg"
           />
         </div>
       </section>
@@ -191,7 +192,7 @@ export const Scholarship = ({ scholarships = sampleScholarships }) => {
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6 mb-8">
             <div>
-              <h2 className="text-3xl font-extrabold text-gray-900 dark:text-white">
+              <h2 className="text-2xl md:text-3xl font-extrabold text-gray-900 dark:text-white">
                 Scholarships we offer
               </h2>
               <p className="mt-2 text-gray-600 dark:text-gray-300 max-w-2xl">
@@ -199,8 +200,10 @@ export const Scholarship = ({ scholarships = sampleScholarships }) => {
                 focus on study and impact.
               </p>
             </div>
-            <div className="flex gap-3 items-center">
-              <div className="relative">
+
+            <div className="flex items-center">
+              <div className="flex items-center bg-white dark:bg-gray-800 rounded-lg shadow px-3 py-2 gap-3">
+                <Search className="w-5 h-5 text-gray-400" />
                 <label htmlFor="search" className="sr-only">
                   Search scholarships
                 </label>
@@ -209,23 +212,27 @@ export const Scholarship = ({ scholarships = sampleScholarships }) => {
                   value={query}
                   onChange={(e) => setQuery(e.target.value)}
                   placeholder="Search by title or keyword"
-                  className="w-80 px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm bg-gray-50 dark:bg-gray-800 border-gray-200 dark:border-gray-700 text-gray-900 dark:text-gray-100"
+                  className="w-56 bg-transparent focus:outline-none text-sm text-gray-900  dark:text-gray-100"
                 />
-              </div>
-              <div className="hidden sm:flex gap-2 items-center">
-                {levels.map((lvl) => (
-                  <button
-                    key={lvl}
-                    onClick={() => setLevelFilter(lvl)}
-                    className={`text-sm px-3 py-2 rounded-md transition-shadow focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-blue-700 ${
-                      levelFilter === lvl
-                        ? "bg-indigo-600 text-white shadow-md"
-                        : "bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-200"
-                    }`}
-                  >
-                    {lvl}
-                  </button>
-                ))}
+
+                <select
+                  value={levelFilter}
+                  onChange={(e) => setLevelFilter(e.target.value)}
+                  className="ml-2 bg-black text-sm text-gray-700 dark:text-gray-200 focus:outline-none"
+                >
+                  {levels.map((lvl) => (
+                    <option key={lvl} value={lvl} className="text-sm">
+                      {lvl}
+                    </option>
+                  ))}
+                </select>
+
+                <button
+                  onClick={() => {}}
+                  className="ml-2 px-3 py-1.5 bg-indigo-600 text-white rounded-md text-sm hover:bg-indigo-700 transition"
+                >
+                  Search
+                </button>
               </div>
             </div>
           </div>

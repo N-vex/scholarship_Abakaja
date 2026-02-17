@@ -134,9 +134,6 @@
 
 .login-right {
   width: 55%;
-  background-image: url("../assets/log1.jpg");
-  background-size: cover;
-  background-position: center;
 }
 
 @media (max-width: 900px) {

@@ -1,21 +1,20 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { supabase } from "@/components/ui/client"; 
+import { supabase } from "@/components/ui/client";
 import "@/pages/LoginPage.css";
 
 export const LoginPage = () => {
   const navigate = useNavigate();
   const [errorMessage, setErrorMessage] = useState("");
 
-    const handleGoogleLogin = async () => {
-      await supabase.auth.signInWithOAuth({
-        provider: "google",
-        options: {
-          redirectTo: `${window.location.origin}/admin`,
-        },
-      });
-    };
-
+  const handleGoogleLogin = async () => {
+    await supabase.auth.signInWithOAuth({
+      provider: "google",
+      options: {
+        redirectTo: `${window.location.origin}/admin`,
+      },
+    });
+  };
 
   // const handleGithubLogin = async () => {
   //   const { error } = await supabase.auth.signInWithOAuth({
@@ -57,7 +56,9 @@ export const LoginPage = () => {
   useEffect(() => {
     // Check if user is already logged in
     const checkSession = async () => {
-        const { data: { session } } = await supabase.auth.getSession();
+      const {
+        data: { session },
+      } = await supabase.auth.getSession();
 
       if (session) {
         navigate("/admin", { replace: true });
@@ -71,7 +72,7 @@ export const LoginPage = () => {
         if (session?.user) {
           navigate("/admin");
         }
-      }
+      },
     );
 
     return () => {
@@ -83,51 +84,69 @@ export const LoginPage = () => {
     <div className="login-root min-h-screen flex flex-col md:flex-row p-6 md:p-24">
       {/* LEFT PANEL */}
       <div className="login-left w-full md:w-1/2 flex flex-col justify-center">
-        <img 
-          src="/assets/logo01.png" 
-          className="w-48 h-auto mb-8"
-          alt="logo" 
-        />
+        <img src="/assets/logo01.png" className="w-48 h-auto mb-8" alt="logo" />
 
-        <h1 className="text-2xl md:text-3xl font-bold">Sign in to your account</h1>
+        <h1 className="text-2xl md:text-3xl font-bold">
+          Sign in to your account
+        </h1>
         <p className="subtitle mb-6">
-          No Account? <a href="/signup" className="text-blue-600">Sign Up</a>
+          No Account?{" "}
+          <a href="/signup" className="text-blue-600">
+            Sign Up
+          </a>
         </p>
 
         <form onSubmit={handleEmailLogin} className="login-form space-y-4">
           <div className="flex flex-col">
             <label className="mb-1">Email address</label>
-            <input  name="email" type="email" placeholder="Enter your email" className="p-2 border rounded" />
+            <input
+              name="email"
+              type="email"
+              placeholder="Enter your email"
+              className="p-2 border rounded"
+            />
           </div>
 
           <div className="flex flex-col">
             <label className="mb-1">Password</label>
-            <input  name="password" type="password" placeholder="••••••••" className="p-2 border rounded" />
+            <input
+              name="password"
+              type="password"
+              placeholder="••••••••"
+              className="p-2 border rounded"
+            />
           </div>
 
           <div className="form-row flex justify-between items-center text-sm">
             <label className="remember flex items-center gap-2">
               <input type="checkbox" /> Remember me
             </label>
-            <a href="#" className="forgot text-blue-600">Forgot password?</a>
+            <a href="#" className="forgot text-blue-600">
+              Forgot password?
+            </a>
           </div>
 
-          <button type="submit" className="primary-btn w-full py-3 bg-black text-white rounded">
+          <button
+            type="submit"
+            className="primary-btn w-full py-3 bg-black text-white rounded"
+          >
             Sign in
           </button>
 
-                    {errorMessage && (
+          {errorMessage && (
             <p className="text-red-600 text-sm mt-2">{errorMessage}</p>
           )}
         </form>
 
         <div className="divider my-6 text-center border-b relative">
-          <span className="bg-white px-2 relative top-3 text-gray-500 text-sm">Or continue with</span>
+          <span className="bg-white px-2 relative top-3 text-gray-500 text-sm">
+            Or continue with
+          </span>
         </div>
 
         <div className="oauth flex flex-col sm:flex-row gap-4 mt-6">
-          <button 
-            onClick={handleGoogleLogin} 
+          <button
+            onClick={handleGoogleLogin}
             className="oauth-btn flex-1 border py-2 rounded flex items-center justify-center gap-2 hover:bg-gray-50 transition-colors"
           >
             Google
@@ -143,7 +162,13 @@ export const LoginPage = () => {
       </div>
 
       {/* RIGHT PANEL */}
-      <div className="login-right hidden md:block md:w-1/2 bg-gray-100" />
+      <div className="login-right hidden md:block md:w-1/2">
+        <img
+          src="/assets/admin.jpg"
+          alt="Admin panel"
+          className="w-full h-full object-cover rounded-full shadow-lg"
+        />
+      </div>
     </div>
   );
 };

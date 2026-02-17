@@ -12,6 +12,7 @@ import {
   Trophy,
   ChevronLeft,
   ChevronRight,
+  ChevronDown,
 } from "lucide-react";
 import { motion } from "framer-motion";
 import { Card } from "@/components/ui/Card";
@@ -186,33 +187,33 @@ export const Home = () => {
   const steps = [
     {
       icon: FileText,
-      title: "Apply Online",
+      title: "Go To Scholarship Portal",
       description:
-        "Complete our simple online application with your academic records and personal statement.",
+        "Visit our scholarship portal to explore available opportunities and find the right fit for your educational goals.",
+      color: "text-primary",
+      bgColor: "bg-primary/10",
+    },
+    {
+      icon: Trophy,
+      title: "Select a Scholarship & Apply",
+      description:
+      "Choose the scholarship that best matches your aspirations and submit a compelling application showcasing your achievements and potential.",
       color: "text-primary",
       bgColor: "bg-primary/10",
     },
     {
       icon: CheckCircle,
-      title: "Review Process",
+      title: "Complete Your Profile",
       description:
-        "Our committee carefully reviews each application based on merit, need, and potential.",
+        "Create an account and fill out your profile with your academic background, achievements, and aspirations.",
       color: "text-accent",
       bgColor: "bg-accent/10",
     },
     {
-      icon: Trophy,
-      title: "Selection & Award",
-      description:
-        "Selected scholars are notified and receive their scholarship awards directly.",
-      color: "text-primary",
-      bgColor: "bg-primary/10",
-    },
-    {
       icon: BookOpen,
-      title: "Continuous Support",
+      title: "Submit & Track Your Application",
       description:
-        "Recipients gain access to mentorship, networking, and ongoing educational resources.",
+        "Review your information, submit your application, and monitor your dashboard or email for updates on your application status.",
       color: "text-accent",
       bgColor: "bg-accent/10",
     },
@@ -255,16 +256,16 @@ export const Home = () => {
           modules={[Navigation, Pagination, Autoplay]}
           navigation={{ nextEl: ".swiper-next", prevEl: ".swiper-prev" }}
           pagination={{ clickable: true }}
-          autoplay={{ delay: 5000, disableOnInteraction: false }}
+          autoplay={{ delay: 6000, disableOnInteraction: false }}
           spaceBetween={20}
           slidesPerView={1}
-          className="w-screen h-screen overflow-hidden"
+          className="w-screen h-[75vh] overflow-hidden"
         >
           {slides.map(({ image, title, subtitle }) => (
             <SwiperSlide key={image} className="relative">
               <img
                 src={image}
-                className={`w-full h-full ${image.includes("main.png") ? "object-contain" : "object-cover"}`}
+                className={`w-full h-full ${image.includes("main.png") ? "object-contain py-8" : "object-cover"}`}
               />
 
               <div className="absolute inset-0 flex items-end justify-start p-6">
@@ -280,6 +281,8 @@ export const Home = () => {
             </SwiperSlide>
           ))}
         </Swiper>
+
+   
 
         {/* Custom navigation buttons so arrows are visible and styled */}
         <button
@@ -299,8 +302,22 @@ export const Home = () => {
         </button>
       </div>
 
+                   {/* Scroll down indicator */}
+        <a
+          href="#values"
+          className="absolute left-1/2 transform -translate-x-1/2 bottom-6 z-40"
+          aria-label="Scroll down"
+        >
+          <div className="flex flex-col items-center space-y-2 cursor-pointer">
+            <div className="w-10 h-10 rounded-full bg-black/40 text-white flex items-center justify-center animate-bounce">
+              <ChevronDown className="w-5 h-5" />
+            </div>
+            <span className="text-white text-sm opacity-80">Scroll</span>
+          </div>
+        </a>
+
       {/* MISSION / VALUES / VISION */}
-      <section id="values" className="py-10 ">
+      <section id="values" className="py-24 ">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-12 dark:text-white">
             Our Mission, Goal & Vision
@@ -312,10 +329,10 @@ export const Home = () => {
               className="p-6 rounded-2xl shadow-md"
               style={{ backgroundColor: "#A7B75D" }}
             >
-              <div className="w-28 h-28 mx-auto flex items-center justify-center rounded-full text-white text-xl font-semibold mb-4">
+              <div className="w-28 h-28 mx-auto flex items-center justify-center rounded-full text-white text-2xl font-semibold mb-4">
                 Mission
               </div>
-              <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+              <p className="text-gray-700 dark:text-gray-300 text-xl leading-relaxed">
                 <strong>
                   The Mission is to eradicate ignorance and poverty through
                   career revolution and to create community partnerships to
@@ -329,10 +346,10 @@ export const Home = () => {
               className="p-6 rounded-2xl shadow-md"
               style={{ backgroundColor: "#44493A" }}
             >
-              <div className="w-28 h-28 mx-auto flex items-center justify-center rounded-full  text-white text-xl font-semibold mb-4">
+              <div className="w-28 h-28 mx-auto flex items-center justify-center rounded-full  text-white text-2xl font-semibold mb-4">
                 Goal
               </div>
-              <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+              <p className="text-gray-700 dark:text-gray-300 text-xl leading-relaxed">
                 <strong>
                   To create and promote a world-class educational scholarship
                   programme for our people and foster mutually beneficial
@@ -346,10 +363,10 @@ export const Home = () => {
               className="p-6 rounded-2xl shadow-md"
               style={{ backgroundColor: "#000000" }}
             >
-              <div className="w-28 h-28 mx-auto flex items-center justify-center rounded-full  text-white text-xl font-semibold mb-4">
+              <div className="w-28 h-28 mx-auto flex items-center justify-center rounded-full  text-white text-2xl font-semibold mb-4">
                 Vision
               </div>
-              <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+              <p className="text-gray-700 dark:text-gray-300 text-xl leading-relaxed">
                 <strong>
                   To bridge the gaps between opportunities to excel, and to
                   transform the community into a world-class society, where
@@ -499,7 +516,7 @@ export const Home = () => {
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto mb-16 animate-fade-in-up">
             <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-6">
-              How It Works
+              How To Apply for Our Scholarship
             </h2>
             <p className="text-lg text-muted-foreground">
               A straightforward process designed to get you funded quickly and
