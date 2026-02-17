@@ -105,8 +105,7 @@ const ApplicationFormSubmit = () => {
           utme_score: values.utmeScore,
           documents: values.documents,
           statement_of_purpose: values.statement,
-          declaration:
-            "I declare that the information provided is accurate and complies with the Privacy Act, for which I hereby append my signature.",
+          declaration: values.declaration,
           signature: values.signature,
         },
       ]);

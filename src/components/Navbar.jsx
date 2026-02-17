@@ -15,19 +15,16 @@ export const Navbar = () => {
       <header className="bg-blue-400">
         <nav className="bg-white dark:bg-black fixed w-full z-20 top-0 start-0 border-b dark:border-blue  -600">
           <div className="max-w-7xl flex flex-wrap items-center justify-between mx-auto p-5">
-            <a
-              href="/"
-              className="flex items-center rtl:space-x-reverse"
-            >
+            <a href="/" className="flex items-center rtl:space-x-reverse">
               <span className="flex items-center md:space-x-1">
-                <img 
-                  src="/assets/logo01.png" 
-                  className="h-8 md:h-10 transform md:scale-191" 
-                  alt="Logo" 
+                <img
+                  src="/assets/logo01.png"
+                  className="h-8 md:h-10 transform md:scale-191"
+                  alt="Logo"
                 />
-                <img 
-                  src="/assets/Logo33.png" 
-                  className="hidden md:block h-8 md:h-10" 
+                <img
+                  src="/assets/Logo33.png"
+                  className="hidden md:block h-8 md:h-10"
                   alt="Logo 2"
                 />
               </span>
@@ -127,37 +124,30 @@ export const Navbar = () => {
                     Contact
                   </NavLink>
                 </li>
-
-                        <NavLink to="/login" onClick={() => setIsMenuOpen(false)}>
-                {({ isActive }) => (
-                  <Button
-                    className={`
-                      flex items-center gap-2 px-4 py-2 
-                      rounded-md transition-colors
-                      ${
-                        isActive
-                          ? "bg-blue-700 text-white hover:bg-blue-800"
-                          : "bg-transparent text-blue-700 border border-blue-700 hover:bg-blue-700 hover:text-white"
-                      }
-                    `}
-                  >
-                    <Shield className="w-4 h-4" />
-                    Admin Panel
-                  </Button>
-                )}
-              </NavLink>
-
-
-
-                {/* Donate Button moved inside */}
+                <li>
+                  <NavLink to="/login" onClick={() => setIsMenuOpen(false)}>
+                    {({ isActive }) => (
+                      <Button
+                        className={`flex items-center gap-2 px-4 py-2 rounded-md transition-colors ${
+                          isActive
+                            ? "bg-blue-700 text-white hover:bg-blue-800"
+                            : "bg-transparent text-blue-700 border border-blue-700 hover:bg-blue-700 hover:text-white"
+                        }`}
+                      >
+                        <Shield className="w-4 h-4" />
+                        Admin Panel
+                      </Button>
+                    )}
+                  </NavLink>
+                </li>
                 <li className="mt-2 md:mt-0">
                   <NavLink to="/donation" onClick={() => setIsMenuOpen(false)}>
-                  <button
-                    type="button"
-                    className="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-                  >
-                    Donate
-                  </button>
+                    <button
+                      type="button"
+                      className="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                    >
+                      Donate
+                    </button>
                   </NavLink>
                 </li>
               </ul>
