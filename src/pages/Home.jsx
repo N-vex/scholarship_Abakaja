@@ -1,5 +1,10 @@
-import React, { useEffect, useState, useRef, Link } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import React, { useEffect, useState, useRef } from "react";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useNavigate,
+} from "react-router-dom";
 import about01 from "/assets/about01.jpeg";
 import about2 from "/assets/about2.jpeg";
 import about9 from "/assets/about9.jpg";
@@ -113,7 +118,7 @@ export const Home = () => {
       image: about2,
     },
     {
-      name: "Dr. Aisha Patel",
+      name: "Dr. Obiesie Ahuize Emmanuel",
       role: "Secretary BOT of Operations",
       bio: "lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       education: "lorem ipsum dolor sit amet, consectetur adipiscing elit.",
@@ -197,7 +202,7 @@ export const Home = () => {
       icon: Trophy,
       title: "Select a Scholarship & Apply",
       description:
-      "Choose the scholarship that best matches your aspirations and submit a compelling application showcasing your achievements and potential.",
+        "Choose the scholarship that best matches your aspirations and submit a compelling application showcasing your achievements and potential.",
       color: "text-primary",
       bgColor: "bg-primary/10",
     },
@@ -248,6 +253,14 @@ export const Home = () => {
     if (ref.current) observer.observe(ref.current);
     return () => observer.disconnect();
   }, []);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  const navigate = useNavigate();
+  const [requirementsViewed, setRequirementsViewed] = useState(false);
+
   return (
     <>
       {/* HERO SECTION */}
@@ -282,8 +295,6 @@ export const Home = () => {
           ))}
         </Swiper>
 
-   
-
         {/* Custom navigation buttons so arrows are visible and styled */}
         <button
           className="swiper-prev absolute left-4 top-1/2 transform -translate-y-1/2 z-30 w-10 h-10 bg-black/40 text-white hover:bg-black/50 rounded-full flex items-center justify-center"
@@ -302,19 +313,19 @@ export const Home = () => {
         </button>
       </div>
 
-                   {/* Scroll down indicator */}
-        <a
-          href="#values"
-          className="absolute left-1/2 transform -translate-x-1/2 bottom-6 z-40"
-          aria-label="Scroll down"
-        >
-          <div className="flex flex-col items-center space-y-2 cursor-pointer">
-            <div className="w-10 h-10 rounded-full bg-black/40 text-white flex items-center justify-center animate-bounce">
-              <ChevronDown className="w-5 h-5" />
-            </div>
-            <span className="text-white text-sm opacity-80">Scroll</span>
+      {/* Scroll down indicator */}
+      <a
+        href="#values"
+        className="absolute left-1/2 transform -translate-x-1/2 bottom-6 z-40"
+        aria-label="Scroll down"
+      >
+        <div className="flex flex-col items-center space-y-2 cursor-pointer">
+          <div className="w-10 h-10 rounded-full bg-black/40 text-white flex items-center justify-center animate-bounce">
+            <ChevronDown className="w-5 h-5" />
           </div>
-        </a>
+          <span className="text-white text-sm opacity-80">Scroll</span>
+        </div>
+      </a>
 
       {/* MISSION / VALUES / VISION */}
       <section id="values" className="py-24 ">
@@ -327,12 +338,12 @@ export const Home = () => {
             {/* Mission */}
             <div
               className="p-6 rounded-2xl shadow-md"
-              style={{ backgroundColor: "#A7B75D" }}
+              style={{ backgroundColor: "#000000" }}
             >
               <div className="w-28 h-28 mx-auto flex items-center justify-center rounded-full text-white text-2xl font-semibold mb-4">
                 Mission
               </div>
-              <p className="text-gray-700 dark:text-gray-300 text-xl leading-relaxed">
+              <p className="text-white text-xl leading-relaxed">
                 <strong>
                   The Mission is to eradicate ignorance and poverty through
                   career revolution and to create community partnerships to
@@ -344,12 +355,12 @@ export const Home = () => {
             {/* Values */}
             <div
               className="p-6 rounded-2xl shadow-md"
-              style={{ backgroundColor: "#44493A" }}
+              style={{ backgroundColor: "#000000" }}
             >
               <div className="w-28 h-28 mx-auto flex items-center justify-center rounded-full  text-white text-2xl font-semibold mb-4">
                 Goal
               </div>
-              <p className="text-gray-700 dark:text-gray-300 text-xl leading-relaxed">
+              <p className="text-white text-xl leading-relaxed">
                 <strong>
                   To create and promote a world-class educational scholarship
                   programme for our people and foster mutually beneficial
@@ -366,7 +377,7 @@ export const Home = () => {
               <div className="w-28 h-28 mx-auto flex items-center justify-center rounded-full  text-white text-2xl font-semibold mb-4">
                 Vision
               </div>
-              <p className="text-gray-700 dark:text-gray-300 text-xl leading-relaxed">
+              <p className="text-white text-xl leading-relaxed">
                 <strong>
                   To bridge the gaps between opportunities to excel, and to
                   transform the community into a world-class society, where
@@ -654,16 +665,22 @@ export const Home = () => {
             goals.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="/application-form">
-              <button className="px-8 py-3 bg-primary text-primary-foreground rounded-lg font-semibold hover:bg-primary/90 transition-all hover:scale-105">
-                Start Application
-              </button>
-            </a>
-            <a href="/scholarships">
-              <button className="px-8 py-3 border-2 border-border text-foreground rounded-lg font-semibold hover:bg-muted transition-all">
-                View Requirements
-              </button>
-            </a>
+            <button
+              className="px-8 py-3 bg-primary text-primary-foreground rounded-lg font-semibold hover:bg-primary/90 transition-all hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
+              disabled={!requirementsViewed}
+              onClick={() => navigate("/application-form")}
+            >
+              Start Application
+            </button>
+            <button
+              className="px-8 py-3 bg-transparent border border-primary text-primary rounded-lg font-semibold hover:bg-primary/10 transition-all hover:scale-105"
+              onClick={() => {
+                setRequirementsViewed(true);
+                navigate("/scholarships");
+              }}
+            >
+              View Requirements
+            </button>
           </div>
         </div>
       </div>

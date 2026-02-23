@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect } from "react";
 import {
   Award,
   GraduationCap,
@@ -79,9 +79,16 @@ export const Scholarship = ({ scholarships = sampleScholarships }) => {
     });
   }, [scholarships, query, levelFilter]);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <>
-      <section className="flex flex-col md:flex-row items-center justify-between text-white  py-24 px-4 sm:py-20 sm:px-6 lg:px-8">
+      <section
+        id="Scholar"
+        className="flex flex-col md:flex-row items-center justify-between text-white  py-24 px-4 sm:py-20 sm:px-6 lg:px-8"
+      >
         {/* Left Text Section */}
         <div className="md:w-1/2 mb-10 text-center md:mb-0">
           <h1 className="text-4xl md:text-5xl  font-bold leading-tight mb-6">
@@ -185,17 +192,14 @@ export const Scholarship = ({ scholarships = sampleScholarships }) => {
         </div>
       </section>
 
-      <section
-        id="scholarships"
-        className="py-12 px-6 sm:px-8 lg:px-16 bg-black"
-      >
+      <section id="scholarships" className="py-12 px-6 sm:px-8 lg:px-16">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6 mb-8">
             <div>
-              <h2 className="text-2xl md:text-3xl font-extrabold text-gray-900 dark:text-white">
+              <h2 className="text-2xl md:text-4xl font-extrabold text-gray-900 dark:text-white">
                 Scholarships we offer
               </h2>
-              <p className="mt-2 text-gray-600 dark:text-gray-300 max-w-2xl">
+              <p className="mt-2 text-xl text-white dark:text-white max-w-2xl">
                 Financial support and fellowships designed to help students
                 focus on study and impact.
               </p>
@@ -263,14 +267,14 @@ export const Scholarship = ({ scholarships = sampleScholarships }) => {
 
           <section className="py-16 px-4 sm:py-20 ">
             <div className="max-w-4xl mx-auto text-white">
-              <h2 className="text-3xl font-bold text-center mb-10 text-gray-900 dark:text-white">
+              <h2 className="text-4xl font-bold text-center mb-10 text-gray-900 dark:text-white">
                 Scholarships We Offer & Criteria
               </h2>
-              <p className="mb-3 text-body">
+              <p className="mb-3 text-xl text-body">
                 Any career opportunity to study mainly in the Federal
                 Universities in Nigeria in the following professional courses:
               </p>
-              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+              <div className=" text-xl grid grid-cols-1 gap-6 sm:grid-cols-2">
                 <p className="mb-3 text-body">
                   Law, medicine/paramedical courses, engineering (Mechanical,
                   civil, electrical, structural), Aviation engineering, Marine
@@ -286,39 +290,39 @@ export const Scholarship = ({ scholarships = sampleScholarships }) => {
               </div>
               <strong>
                 <p
-                  className="mb-3 text-3xl text-body text-center"
+                  className="mb-3 text-4xl text-body text-center"
                   id="requirements"
                 >
                   Eligibility and requirements.
                 </p>
               </strong>
-              <p className="mb-3 text-body">
+              <p className="mb-3 text-xl text-body">
                 Candidates for application into the Foundation’s scholarship
                 must fulfil the following condition:
               </p>
-              <p className="mb-3 text-body">
+              <p className="mb-3 text-xl text-body">
                 1. Must have met all requirements to be admitted into any
                 Federal University in Nigeria.
               </p>
-              <p className="mb-3 text-body">
+              <p className="mb-3 text-xl text-body">
                 2. Must have the relevant WAEC/NECO credits to be admitted for
                 the course of study.
               </p>
-              <p className="mb-3 text-body">
+              <p className="mb-3 text-xl text-body">
                 3. Must have met the JAMB and post UTME test, on good merit
                 stand.
               </p>
-              <p className="mb-3 text-body">
+              <p className="mb-3 text-xl text-body">
                 4. Must have a genuine and verifiable need for scholarship help.
               </p>
-              <p className="mb-3 text-body">
+              <p className="mb-3 text-xl text-body">
                 5. Must have an impeccable record of good standing (in character
                 and morality) from schools attended previously.
               </p>
-              <p className="mb-3 text-body">
+              <p className="mb-3 text-xl text-body">
                 6. Must sign MOU on “one for two” concept of the Foundation.
               </p>
-              <p className="mb-3 text-body">
+              <p className="mb-3 text-xl text-body">
                 7. Must demonstrate good understanding of the Mission, vision,
                 goals, aim and objectives of the Foundations.
               </p>
@@ -326,11 +330,11 @@ export const Scholarship = ({ scholarships = sampleScholarships }) => {
               <br />
 
               <strong>
-                <p className="mb-3 text-3xl text-body text-center">
+                <p className="mb-3 text-4xl text-body text-center">
                   Method of application.
                 </p>
               </strong>
-              <p className="mb-3 text-body">
+              <p className="mb-3 text-xl text-body">
                 The Foundation Board of Directors shall announce for each
                 academic year the application period via local, print, audio and
                 social media. The application forms shall be obtainable at
@@ -342,8 +346,8 @@ export const Scholarship = ({ scholarships = sampleScholarships }) => {
               </p>
             </div>
           </section>
-          <div className="mt-10 text-center">
-            <p className="text-gray-600 dark:text-gray-300 mb-4">
+          <div className="mt-10 text-xl text-center">
+            <p className="text-white mb-4">
               Have you reviewed the requirements and you’re ready to apply?
             </p>
 

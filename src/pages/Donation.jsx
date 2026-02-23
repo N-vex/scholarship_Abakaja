@@ -1,4 +1,4 @@
-import React, {useRef, useState} from "react";
+import React, { useRef, useState, useEffect } from "react";
 import emailjs from "@emailjs/browser";
 
 const EMAILJS_SERVICE_ID = "service_dlvtc6f";
@@ -13,6 +13,10 @@ const Donate = () => {
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   /* ===== Handle Form Submission ===== */
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -24,7 +28,7 @@ const Donate = () => {
         EMAILJS_SERVICE_ID,
         EMAILJS_TEMPLATE_ID,
         formRef.current,
-        EMAILJS_PUBLIC_KEY
+        EMAILJS_PUBLIC_KEY,
       )
       .then(
         () => {
@@ -36,7 +40,7 @@ const Donate = () => {
           setLoading(false);
           console.error("EmailJS Error:", error);
           alert("Something went wrong. Please try again.");
-        }
+        },
       );
   };
 
@@ -50,38 +54,45 @@ const Donate = () => {
 
       <section className="p-6">
         <div className="max-w-6xl mx-auto bg-white p-8 rounded-lg shadow-lg">
-          
           {/* Two-column layout */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-
             <div>
-              <h2 className="text-2xl font-bold mb-4">Why Your Donation Matters</h2>
+              <h2 className="text-2xl font-bold mb-4">
+                Why Your Donation Matters
+              </h2>
               <p className="text-gray-700 mb-6 leading-relaxed">
-                Your contribution directly supports our scholarship mission, helping
-                talented students overcome financial barriers and gain access to
-                quality education. Every donation, no matter the size, creates
-                real opportunities and lasting impact.
+                Your contribution directly supports our scholarship mission,
+                helping talented students overcome financial barriers and gain
+                access to quality education. Every donation, no matter the size,
+                creates real opportunities and lasting impact.
               </p>
 
               <div className="bg-gray-50 border border-gray-200 rounded-lg p-6">
-                <h3 className="text-xl font-semibold mb-4">Donation Account Details</h3>
+                <h3 className="text-xl font-semibold mb-4">
+                  Donation Account Details
+                </h3>
                 <ul className="space-y-2 text-gray-700">
                   <li>
-                   Bank Name:<strong> Polaris Bank</strong>
+                    Bank Name:<strong> Polaris Bank</strong>
                   </li>
                   <li>
-                    Account Name: <strong> M.O. Agbakaja Educational Foundation (MAEF)</strong>
+                    Account Name:{" "}
+                    <strong>
+                      {" "}
+                      M.O. Agbakaja Educational Foundation (MAEF)
+                    </strong>
                   </li>
                   <li>
                     Account Number: <strong> 1771919561</strong>
                   </li>
                   <li>
-                    Account Type: <strong> Savings</strong> 
+                    Account Type: <strong> Savings</strong>
                   </li>
                 </ul>
 
                 <p className="mt-4 text-sm text-gray-600">
-                  For transfers, please include your name as the payment reference.
+                  For transfers, please include your name as the payment
+                  reference.
                 </p>
               </div>
             </div>
@@ -92,16 +103,10 @@ const Donate = () => {
                 Support Our Mission
               </h2>
 
-              <form className="space-y-6"
-                              ref={formRef}
-                onSubmit={handleSubmit}>
-                
+              <form className="space-y-6" ref={formRef} onSubmit={handleSubmit}>
                 {/* Full Name */}
                 <div>
-                  <label
-                    className="block mb-2 font-medium"
-                    htmlFor="name"
-                  >
+                  <label className="block mb-2 font-medium" htmlFor="name">
                     Full Name
                   </label>
                   <input
@@ -132,10 +137,7 @@ const Donate = () => {
 
                 {/* Donation Amount */}
                 <div>
-                  <label
-                    className="block mb-2 font-medium"
-                    htmlFor="amount"
-                  >
+                  <label className="block mb-2 font-medium" htmlFor="amount">
                     Donation Amount (NGN)
                   </label>
                   <input
@@ -150,10 +152,7 @@ const Donate = () => {
 
                 {/* Optional Message */}
                 <div>
-                  <label
-                    className="block mb-2 font-medium"
-                    htmlFor="message"
-                  >
+                  <label className="block mb-2 font-medium" htmlFor="message">
                     Message (Optional)
                   </label>
                   <textarea
@@ -177,21 +176,19 @@ const Donate = () => {
                 </div>
               </form>
 
-                    {success && (
-                        <p className="text-green-600 text-center font-medium animate-fadeIn">
-                            Thank you! Your donation message has been sent successfully 💙
-                        </p>
-                        )}
-                    </div>
-                </div>
-                </div>
-            </section>
+              {success && (
+                <p className="text-green-600 text-center font-medium animate-fadeIn">
+                  Thank you! Your donation message has been sent successfully 💙
+                </p>
+              )}
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* ===== Footer Thank You Banner ===== */}
       <div className="flex justify-center items-center h-24  text-white text-center px-4">
-        <h1 className="text-3xl font-bold">
-          Thank You for Your Support!
-        </h1>
+        <h1 className="text-3xl font-bold">Thank You for Your Support!</h1>
       </div>
     </>
   );

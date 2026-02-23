@@ -45,25 +45,26 @@ export const SignupPage = () => {
   };
 
   /* ------------------ GOOGLE OAUTH SIGNUP ------------------ */
-    const handleGoogleSignup = async () => {
+  const handleGoogleSignup = async () => {
     setOauthLoading(true);
     setErrorMessage("");
 
     const { error } = await supabase.auth.signInWithOAuth({
-        provider: "google",
-        options: {
+      provider: "google",
+      options: {
         redirectTo: `${window.location.origin}/admin`,
-        },
+      },
     });
 
     if (error) {
-        setErrorMessage(error.message);
-        setOauthLoading(false);
+      setErrorMessage(error.message);
+      setOauthLoading(false);
     }
-    };
+  };
 
   /* ------------------ SESSION CHECK ------------------ */
   useEffect(() => {
+    window.scrollTo(0, 0);
     const checkSession = async () => {
       const { data } = await supabase.auth.getSession();
       if (data.session?.user) {
@@ -166,9 +167,7 @@ export const SignupPage = () => {
             animate={{ opacity: 1 }}
           >
             <h2 className="text-2xl font-semibold">Verify your email 📩</h2>
-            <p className="text-gray-500">
-              We’ve sent a verification link to:
-            </p>
+            <p className="text-gray-500">We’ve sent a verification link to:</p>
             <p className="font-medium">{email}</p>
             <p className="text-sm text-gray-500">
               Please check your inbox to activate your account.

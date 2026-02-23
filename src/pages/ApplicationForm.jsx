@@ -1,19 +1,23 @@
-import  ApplicationFormSubmit  from "@/components/ui/ApplicationFormSubmit";
+import ApplicationFormSubmit from "@/components/ui/ApplicationFormSubmit";
 import { Send } from "lucide-react";
+import { useEffect } from "react";
 
 const ApplicationForm = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="min-h-screen py-12 bg-background ">
       <main className="container mx-auto px-4 py-16">
-        
         {/* Hero Section */}
         <div className="text-center text-white mb-12 animate-fade-in">
           <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
             Scholarship Application Form
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Fill out all required fields accurately. Your application will be reviewed
-            by the foundation.
+            Fill out all required fields accurately. Your application will be
+            reviewed by the foundation.
           </p>
         </div>
 
@@ -34,10 +38,9 @@ const ApplicationForm = () => {
           </div>
           <div className="flex items-center gap-2">
             <div className="w-2 h-2 rounded-full bg-success" />
-              <strong> Fast review time</strong>
+            <strong> Fast review time</strong>
           </div>
         </div>
-
       </main>
     </div>
   );

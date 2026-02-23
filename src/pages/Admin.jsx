@@ -26,9 +26,7 @@ function AdminPage() {
   const fetchForms = async () => {
     setIsLoading(true);
     try {
-      const { data, error } = await supabase
-        .from("applications")
-        .select("*");
+      const { data, error } = await supabase.from("applications").select("*");
 
       console.log("Fetched applications:", data);
       console.log("Supabase error:", error);
@@ -38,7 +36,7 @@ function AdminPage() {
 
       setForms(data ?? []);
       setPendingCount(
-        (data ?? []).filter((f) => f.status === "pending").length
+        (data ?? []).filter((f) => f.status === "pending").length,
       );
     } catch (err) {
       toast.error("Failed to load applications: " + err.message);
@@ -47,16 +45,15 @@ function AdminPage() {
     }
   };
 
-
   const handleLogout = async () => {
     const { error } = await supabase.auth.signOut();
     if (error) {
       toast.error("Failed to log out");
     }
   };
-  
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     fetchForms();
 
     const channel = supabase
@@ -67,7 +64,7 @@ function AdminPage() {
         () => {
           toast.info("New application received");
           fetchForms();
-        }
+        },
       )
       .subscribe();
 
@@ -77,7 +74,7 @@ function AdminPage() {
   }, []);
 
   const filteredForms = forms.filter((form) =>
-    filter === "all" ? true : form.status === filter
+    filter === "all" ? true : form.status === filter,
   );
 
   const filterOptions = [
@@ -99,7 +96,6 @@ function AdminPage() {
     },
   ];
 
-  
   useEffect(() => {
     const checkUserRole = async () => {
       const {
@@ -113,20 +109,17 @@ function AdminPage() {
         console.log("User metadata:", user?.user_metadata);
         console.log("User role:", user?.user_metadata?.role);
         supabase.auth.getUser().then(({ data }) => {
-        console.log("APP META:", data.user.raw_app_meta_data);
-        console.log("ROLE:", data.user.raw_app_meta_data?.role);
-      });
-
+          console.log("APP META:", data.user.raw_app_meta_data);
+          console.log("ROLE:", data.user.raw_app_meta_data?.role);
+        });
       }
     };
 
     checkUserRole();
   }, []);
 
-
-
   return (
-    <div className="min-h-screen text-white bg-background">
+    <div id="top" className="min-h-screen text-white bg-background">
       {/* Header */}
       <div className="glass-strong sticky py-12 border-b border-border/50">
         <div className="container mx-auto px-4 py-16 flex items-center justify-between">
@@ -174,7 +167,7 @@ function AdminPage() {
               onClick={() => setFilter(option.value)}
               className={cn(
                 "glass p-4 rounded-xl text-left transition-all duration-200 hover:shadow-md opacity-0 animate-fade-in-up",
-                filter === option.value && "ring-2 ring-primary shadow-glow"
+                filter === option.value && "ring-2 ring-primary shadow-glow",
               )}
               style={{ animationDelay: `${index * 100}ms` }}
             >
@@ -200,7 +193,7 @@ function AdminPage() {
               variant={filter === option.value ? "default" : "secondary"}
               className={cn(
                 "cursor-pointer transition-all duration-200 hover:scale-105",
-                filter === option.value && "shadow-md"
+                filter === option.value && "shadow-md",
               )}
               onClick={() => setFilter(option.value)}
             >
@@ -252,7 +245,6 @@ function AdminPage() {
     </div>
   );
 }
-
 
 export default function Admin() {
   return (

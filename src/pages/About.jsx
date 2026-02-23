@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { FaEnvelope, FaFacebook } from "react-icons/fa";
 
 export const About = () => {
@@ -8,9 +8,13 @@ export const About = () => {
   //   { name: "Ernest Asogwa", role: "CFO Outreach", img: "/assets/about9.jpg" },
   //   { name: "Dr. (Sir.) Paulinus Chika Enwuru", role: "Member", img: "/assets/port1.jpeg" },
   //   { name: "Ifeanyi Eze", role: "President", img: "/assets/unknown1.jpeg" }, ];
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <>
-      <div className="w-full  text-white">
+      <div id="About" className="w-full  text-white">
         {/* Mission Section */}
         <section className="relative w-full min-h-screen">
           <img
@@ -107,7 +111,7 @@ export const About = () => {
                 </h3>
                 <p className="text-gray-600">Honorary</p>
                 <div className="flex flex-col items-center mt-4 space-y-4">
-                  <a  className="text-white hover:text-blue-800">
+                  <a className="text-white hover:text-blue-800">
                     <FaEnvelope />
                   </a>
                   <a className="text-white hover:text-blue-600">
@@ -134,7 +138,7 @@ export const About = () => {
                     <FaEnvelope />
                     <h5>tonyagba@yahoo.com</h5>
                   </a>
-                  <a  className="text-white hover:text-blue-600">
+                  <a className="text-white hover:text-blue-600">
                     <FaFacebook />
                     <h5> </h5>
                   </a>
@@ -208,7 +212,7 @@ export const About = () => {
                     <FaEnvelope />
                     <h4>enwuruchikapaul1@gmail.com</h4>
                   </a>
-                  <a  className="text-white hover:text-blue-600">
+                  <a className="text-white hover:text-blue-600">
                     <FaFacebook />
                     <h4></h4>
                   </a>
@@ -232,7 +236,7 @@ export const About = () => {
                     <FaEnvelope />
                     <h4>hosana2505@gmail.com </h4>
                   </a>
-                  <a  className="text-white hover:text-blue-600">
+                  <a className="text-white hover:text-blue-600">
                     <FaFacebook />
                     <h4></h4>
                   </a>
@@ -256,7 +260,7 @@ export const About = () => {
                     <FaEnvelope />
                     <h4>obiukwuoliver@yahoo.com</h4>
                   </a>
-                  <a  className="text-white hover:text-blue-600">
+                  <a className="text-white hover:text-blue-600">
                     <FaFacebook />
                     <h4></h4>
                   </a>

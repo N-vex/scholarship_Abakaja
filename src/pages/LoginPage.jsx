@@ -54,6 +54,7 @@ export const LoginPage = () => {
   };
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     // Check if user is already logged in
     const checkSession = async () => {
       const {
