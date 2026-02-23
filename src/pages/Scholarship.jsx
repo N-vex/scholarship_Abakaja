@@ -244,7 +244,7 @@ export const Scholarship = ({ scholarships = sampleScholarships }) => {
             {filtered.map((s) => (
               <article
                 key={s.id}
-                className="group relative rounded-2xl border border-gray-100 dark:border-gray-800 p-6 bg-linear-to-br from-green-500 via-green-400 to-blue-600 shadow-sm hover:shadow-lg transition-shadow"
+                className="group relative rounded-2xl  p-6 bg-linear-to-br from-green-500 via-green-400 to-blue-600 shadow-sm hover:shadow-lg transition-shadow"
               >
                 <header className="flex items-start justify-between gap-4">
                   <div>
