@@ -267,7 +267,7 @@ export const Scholarship = ({ scholarships = sampleScholarships }) => {
 
           <section className="py-16 px-4 sm:py-20 ">
             <div className="max-w-4xl mx-auto text-white">
-              <h2 className="text-4xl font-bold text-center mb-10 text-gray-900 dark:text-white">
+              <h2 className="text-4xl font-bold text-center mb-10 text-gray-900 dark:text-white" id="offer">
                 Scholarships We Offer & Criteria
               </h2>
               <p className="mb-3 text-xl text-body">

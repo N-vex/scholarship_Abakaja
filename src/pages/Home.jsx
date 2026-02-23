@@ -3,7 +3,6 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
-  useNavigate,
 } from "react-router-dom";
 import about01 from "/assets/about01.jpeg";
 import about2 from "/assets/about2.jpeg";
@@ -258,8 +257,8 @@ export const Home = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  const navigate = useNavigate();
-  const [requirementsViewed, setRequirementsViewed] = useState(false);
+  // const navigate = useNavigate();
+  // const [requirementsViewed, setRequirementsViewed] = useState(false);
 
   return (
     <>
@@ -665,22 +664,20 @@ export const Home = () => {
             goals.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button
+            {/* <button
               className="px-8 py-3 bg-primary text-primary-foreground rounded-lg font-semibold hover:bg-primary/90 transition-all hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
               disabled={!requirementsViewed}
               onClick={() => navigate("/application-form")}
             >
               Start Application
-            </button>
-            <button
+            </button> */}
+            <a href="/scholarships">
+              <button
               className="px-8 py-3 bg-transparent border border-primary text-primary rounded-lg font-semibold hover:bg-primary/10 transition-all hover:scale-105"
-              onClick={() => {
-                setRequirementsViewed(true);
-                navigate("/scholarships");
-              }}
             >
               View Requirements
             </button>
+            </a>
           </div>
         </div>
       </div>
