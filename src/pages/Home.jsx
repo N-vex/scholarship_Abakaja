@@ -6,7 +6,7 @@ import {
 } from "react-router-dom";
 import about01 from "/assets/about01.jpeg";
 import about2 from "/assets/about2.jpeg";
-import about9 from "/assets/about9.jpg";
+import lord3 from "/assets/lord3.jpg";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import {
@@ -37,27 +37,27 @@ export const Home = () => {
   const slides = [
     {
       image: "/assets/main.png",
-      title: "Fueling Dreams. Funding Futures.",
+      title: "Fueling dreams, founding futures.",
       subtitle: "Every scholar we support is a story rewritten.",
     },
     {
       image: "/assets/photo3.jpg",
-      title: "Opportunity Starts Here.",
+      title: "Opportunity starts here.",
       subtitle: "Where ambition meets real support.",
     },
     {
       image: "/assets/photo4.jpg",
-      title: "Education Without Limits.",
+      title: "Education without limits.",
       subtitle: "Breaking barriers. Building leaders.",
     },
     {
       image: "/assets/photo5.jpg",
-      title: "Powered by Hope. Driven by Purpose.",
+      title: "Powered by hope, driven by purpose.",
       subtitle: "Your journey begins the moment you believe.",
     },
     {
       image: "/assets/photo6.jpg",
-      title: "Becoming the Next Success Story.",
+      title: "Becoming the next success story.",
       subtitle: "Your future is worth investing in.",
     },
   ];
@@ -103,25 +103,22 @@ export const Home = () => {
 
   const founders = [
     {
-      name: " Mr. Marcel O. Agbakaja",
-      role: "##############",
-      bio: "lorem ipsum dolor sit amet, consectetur adipiscing elit",
-      education: "lorem ipsum dolor sit amet, consectetur adipiscing elit",
+      name: " Mr. M.O. Agbakaja",
+      role: "Honorary of the foundation.",
+      bio: "Father of Chief Chijoke Agbakaja.",
       image: about01,
     },
     {
       name: "Chief Chijoke Agbakaja",
-      role: "Benefactor & Founder of Operations",
-      bio: "lorem ipsum dolor sit amet, consectetur adipiscing elit ",
-      education: "lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      role: "Benefactor & Founder of the foundation.",
+      bio: "The man who started it all, driven by a vision to empower the next generation through education.",
       image: about2,
     },
     {
-      name: "Dr. Obiesie Ahuize Emmanuel",
-      role: "Secretary BOT of Operations",
-      bio: "lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      education: "lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      image: about9,
+      name: "Chief DR. Christian Azubike Enwuru Ph.D.",
+      role: "Chairman (BOT)",
+      bio: "A distinguished leader with a passion for education and community development.",
+      image: lord3,
     },
   ];
 
@@ -191,7 +188,7 @@ export const Home = () => {
   const steps = [
     {
       icon: FileText,
-      title: "Go To Scholarship Portal",
+      title: "Go to scholarship portal",
       description:
         "Visit our scholarship portal to explore available opportunities and find the right fit for your educational goals.",
       color: "text-primary",
@@ -199,7 +196,7 @@ export const Home = () => {
     },
     {
       icon: Trophy,
-      title: "Select a Scholarship & Apply",
+      title: "Select a scholarship & apply",
       description:
         "Choose the scholarship that best matches your aspirations and submit a compelling application showcasing your achievements and potential.",
       color: "text-primary",
@@ -207,7 +204,7 @@ export const Home = () => {
     },
     {
       icon: CheckCircle,
-      title: "Complete Your Profile",
+      title: "Complete your profile",
       description:
         "Create an account and fill out your profile with your academic background, achievements, and aspirations.",
       color: "text-accent",
@@ -215,7 +212,7 @@ export const Home = () => {
     },
     {
       icon: BookOpen,
-      title: "Submit & Track Your Application",
+      title: "Submit & track your application",
       description:
         "Review your information, submit your application, and monitor your dashboard or email for updates on your application status.",
       color: "text-accent",
@@ -409,11 +406,11 @@ export const Home = () => {
         <div className="container mx-auto px-10 relative z-10">
           <div className="text-center mb-16">
             <span className="inline-block px-4 py-2 bg-gold/20 text-gold font-semibold rounded-full text-sm mb-6">
-              What We Stand For
+              What we stand for
             </span>
 
             <h2 className="font-display text-3xl md:text-5xl font-bold text-primary-foreground mb-4">
-              Our Core Values
+              Our core values
             </h2>
 
             <p className="text-primary-foreground/70 text-lg max-w-2xl mx-auto">
@@ -455,11 +452,11 @@ export const Home = () => {
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <span className="inline-block px-4 py-2 bg-gold/10 text-gold font-semibold rounded-full text-sm mb-6">
-              Scholar Stories
+              Scholar stories
             </span>
 
             <h2 className="font-display text-3xl md:text-5xl font-bold text-foreground mb-4">
-              Voices of Our Scholars
+              Voices of our scholars
             </h2>
 
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
@@ -515,7 +512,7 @@ export const Home = () => {
           <a href="/scholar-profile">
             <div className="mt-6 text-center">
               <button className="px-6 py-3 bg-linear-to-br from-green-500 via-green-400 to-blue-600 font-semibold hover:bg-primary/90 transition-all hover:scale-105">
-                Meet More Scholars
+                Meet more scholars
               </button>
             </div>
           </a>
@@ -526,7 +523,7 @@ export const Home = () => {
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto mb-16 animate-fade-in-up">
             <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-6">
-              How To Apply for Our Scholarship
+              How to apply for our scholarship
             </h2>
             <p className="text-lg text-muted-foreground">
               A straightforward process designed to get you funded quickly and
@@ -581,7 +578,7 @@ export const Home = () => {
       <section className="py-10 text-white bg-muted/30 ">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-center mb-16">
-            Meet Our Founders
+            Meet our founders
           </h2>
           <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {founders.map((f, index) => {
@@ -632,7 +629,7 @@ export const Home = () => {
       <section className="py-10 text-white relative overflow-hidden">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-center mb-10">
-            Our Impact in Numbers
+            Our impact in numbers
           </h2>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
@@ -656,7 +653,7 @@ export const Home = () => {
       <div className="container mx-auto px-10">
         <div className="mt-16 text-center bg-muted/50 rounded-2xl text-white bg-linear-to-br from-green-500 via-green-400 to-blue-600 p-8 border-white border-border animate-fade-in-up stagger-4">
           <h3 className="font-display text-2xl font-bold text-foreground mb-6">
-            Ready to Start Your Journey?
+            Ready to start your journey?
           </h3>
           <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
             Applications are reviewed on a rolling basis. The sooner you apply,
@@ -675,7 +672,7 @@ export const Home = () => {
               <button
               className="px-8 py-3 bg-transparent border border-primary text-primary rounded-lg font-semibold hover:bg-primary/10 transition-all hover:scale-105"
             >
-              View Requirements
+              View requirements
             </button>
             </a>
           </div>

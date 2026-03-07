@@ -92,7 +92,7 @@ export const About = () => {
         <section className="py-10 ">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl font-bold text-white mb-12 text-center">
-              Our Board Members
+              Our board members
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
               {/* Leader */}
@@ -107,7 +107,7 @@ export const About = () => {
                 </a>
                 <h3 className="text-xl font-semibold mb-2">
                   {" "}
-                  Mr. Marcel O. Agbakaja.
+                  Mr. M.O. Agbakaja.
                 </h3>
                 <p className="text-gray-600">Honorary</p>
                 <div className="flex flex-col items-center mt-4 space-y-4">
@@ -130,7 +130,7 @@ export const About = () => {
                   />
                 </a>
                 <h3 className="text-xl font-semibold mb-2">
-                  Okechukwu Ndubuisi
+                  Chief Chijoke Agbakaja <br /> (Ikenga Ozuakoli-Urualla){" "}
                 </h3>
                 <p className="text-gray-600">Founder/Benefactor</p>
                 <div className="flex flex-col items-center mt-4 space-y-4">
@@ -155,7 +155,7 @@ export const About = () => {
                   />
                 </a>
                 <h3 className="text-xl font-semibold mb-2">
-                  Chief DR. Christian Azubike Enwuru Ph.D.{" "}
+                  Chief DR. Christian Azubike Enwuru Ph.D. (Agunaemeudo Ozuakoli-Urualla){" "}
                 </h3>
                 <p className="text-gray-600"> Chairman (BOT)</p>
                 <div className="flex flex-col items-center mt-4 space-y-4">
