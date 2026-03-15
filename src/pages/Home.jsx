@@ -104,7 +104,7 @@ export const Home = () => {
   const founders = [
     {
       name: " Mr. M.O. Agbakaja",
-      role: "Honorary of the foundation.",
+      role: "Honoree of the foundation.",
       bio: "Father of Chief Chijoke Agbakaja.",
       image: about01,
     },
@@ -115,7 +115,7 @@ export const Home = () => {
       image: about2,
     },
     {
-      name: "Chief DR. Christian Azubike Enwuru Ph.D.",
+      name: "Chief Christian Azubike Enwuru Ph.D.",
       role: "Chairman (BOT)",
       bio: "A distinguished leader with a passion for education and community development.",
       image: lord3,

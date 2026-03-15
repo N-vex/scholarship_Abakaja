@@ -109,7 +109,7 @@ export const About = () => {
                   {" "}
                   Mr. M.O. Agbakaja.
                 </h3>
-                <p className="text-gray-600">Honorary</p>
+                <p className="text-gray-600">Honoree</p>
                 <div className="flex flex-col items-center mt-4 space-y-4">
                   <a className="text-white hover:text-blue-800">
                     <FaEnvelope />
@@ -155,7 +155,7 @@ export const About = () => {
                   />
                 </a>
                 <h3 className="text-xl font-semibold mb-2">
-                  Chief DR. Christian Azubike Enwuru Ph.D. (Agunaemeudo Ozuakoli-Urualla){" "}
+                  Chief Christian Azubike Enwuru Ph.D. (Agunaemeudo Ozuakoli-Urualla){" "}
                 </h3>
                 <p className="text-gray-600"> Chairman (BOT)</p>
                 <div className="flex flex-col items-center mt-4 space-y-4">
